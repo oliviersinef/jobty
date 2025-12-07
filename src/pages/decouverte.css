@@ -1,0 +1,786 @@
+/* ========== CONTAINER PRINCIPAL ========== */
+.decouverte-container {
+  min-height: 100vh;
+  background-color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+}
+
+/* ========== NAVBAR ========== */
+.navbar-decouverte {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #f0f0f0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.logo-decouverte {
+  display: flex;
+  align-items: center;
+}
+
+.logo-img-small {
+  max-width: 120px;
+  height: auto;
+}
+
+/* Bouton burger (caché sur desktop) */
+.burger-btn {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.3s ease;
+}
+
+.burger-btn:hover {
+  color: #3DC7C9;
+}
+
+/* Navigation desktop */
+.nav-links-decouverte {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.nav-btn {
+  padding: 10px 20px;
+  background: transparent;
+  border: none;
+  font-size: 15px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+}
+
+.nav-btn:hover {
+  background-color: #f5f5f5;
+  color: #3DC7C9;
+}
+
+.nav-btn-primary {
+  color: white !important;
+  border-radius: 50px;
+  padding: 10px 24px;
+}
+
+.nav-btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(61, 199, 201, 0.3);
+}
+
+/* ========== MENU BURGER LATÉRAL ========== */
+.sidebar-menu {
+  position: fixed;
+  top: 0;
+  right: -300px;
+  width: 280px;
+  height: 100vh;
+  background-color: #FFFFFF;
+  box-shadow: -4px 0 12px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-menu.open {
+  right: 0;
+}
+
+.sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.sidebar-logo {
+  max-width: 100px;
+  height: auto;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 28px;
+  color: #333;
+  cursor: pointer;
+  padding: 8px;
+  transition: color 0.3s ease;
+}
+
+.close-btn:hover {
+  color: #3DC7C9;
+}
+
+.sidebar-nav {
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  gap: 12px;
+}
+
+.sidebar-link {
+  padding: 14px 20px;
+  background: transparent;
+  border: none;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border-radius: 8px;
+  text-align: left;
+  width: 100%;
+}
+
+.sidebar-link:hover {
+  background-color: #f5f5f5;
+  color: #3DC7C9;
+}
+
+.sidebar-link-primary {
+  color: white !important;
+  border-radius: 50px;
+  margin-top: 12px;
+}
+
+.sidebar-link-primary:hover {
+  opacity: 0.9;
+}
+
+/* Overlay sombre derrière le menu */
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 999;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ========== MAIN CONTENT ========== */
+.main-decouverte {
+  flex: 1;
+  padding: 60px 50px;
+  max-width: 1400px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* ========== HEADER DE LA PAGE ========== */
+.decouverte-header {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.decouverte-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 15px;
+  line-height: 1.2;
+}
+
+.decouverte-subtitle {
+  font-size: 18px;
+  color: #666;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* ========== GRILLE DES SECTEURS ========== */
+.secteurs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin-bottom: 50px;
+}
+
+.secteur-card {
+  background: #FFFFFF;
+  border: 2px solid #f0f0f0;
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.secteur-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: #6852A3;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.secteur-card:hover::before {
+  transform: scaleX(1);
+}
+
+.secteur-card:hover {
+  border-color: #3DC7C9;
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(61, 199, 201, 0.15);
+}
+
+.secteur-icon-wrapper {
+  width: 60px;
+  height: 60px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.secteur-card:hover .secteur-icon-wrapper {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.secteur-icon {
+  font-size: 40px;
+  transition: all 0.3s ease;
+  stroke-width: 1.5;
+}
+
+.secteur-nom {
+  font-size: 17px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+.secteur-description {
+  font-size: 13px;
+  color: #888;
+  line-height: 1.4;
+}
+
+/* ========== CALL TO ACTION ========== */
+.decouverte-cta {
+  text-align: center;
+  padding: 40px 20px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 16px;
+}
+
+.cta-text {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+.cta-button {
+  padding: 16px 40px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.cta-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(61, 199, 201, 0.4);
+}
+
+/* ========== SECTION TÉMOIGNAGES ========== */
+.temoignages-section {
+  background-color: #f5f5f5;
+  padding: 80px 20px;
+}
+
+.temoignages-container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Ligne décorative turquoise */
+.decorative-line {
+  width: 100px;
+  height: 3px;
+  border-radius: 2px;
+}
+
+/* Photos de profil chevauchées */
+.profiles-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.profile-avatar {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 3px solid #f5f5f5;
+  margin-left: -12px;
+  transition: transform 0.3s ease;
+  position: relative;
+}
+
+.profile-avatar:first-child {
+  margin-left: 0;
+}
+
+.profile-avatar:hover {
+  transform: scale(1.15);
+  z-index: 20 !important;
+}
+
+/* Étoiles */
+.stars-rating {
+  display: flex;
+  gap: 6px;
+  align-items: center;
+}
+
+.star {
+  font-size: 22px;
+  color: #FFD700;
+  fill: #FFD700;
+  stroke: #FFD700;
+}
+
+.star.filled {
+  fill: #FFD700;
+}
+
+.star.half-filled {
+  fill: url(#half);
+}
+
+/* Texte témoignage - Harmonisé avec decouverte-subtitle */
+.temoignage-text {
+  font-size: 18px;
+  color: #666;
+  font-weight: 500;
+  line-height: 1.6;
+  max-width: 600px;
+}
+
+/* Bouton Jobeur - Harmonisé avec cta-button */
+.jobeur-button {
+  padding: 16px 40px;
+  border: none;
+  border-radius: 50px;
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.jobeur-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(44, 192, 195, 0.4);
+}
+
+/* ========== SECTION SERVICES ========== */
+.services-section {
+  background: linear-gradient(135deg, #7B68AB 0%, #6852A3 100%);
+  padding: 80px 20px;
+}
+
+.services-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 40px;
+}
+
+.service-card {
+  text-align: center;
+  padding: 30px 20px;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-8px);
+}
+
+.service-icon-circle {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease;
+}
+
+.service-card:hover .service-icon-circle {
+  transform: scale(1.1) rotate(5deg);
+}
+
+.service-icon {
+  font-size: 36px;
+  color: white;
+  stroke-width: 1.5;
+}
+
+/* Titre service - Harmonisé avec secteur-nom */
+.service-title {
+  font-size: 17px;
+  font-weight: 600;
+  color: white;
+  margin-bottom: 12px;
+  letter-spacing: 1px;
+}
+
+/* Description service - Harmonisée avec secteur-description */
+.service-description {
+  font-size: 13px;
+  color: white;
+  line-height: 1.5;
+  opacity: 0.95;
+}
+
+/* ========== FOOTER ========== */
+.footer-decouverte {
+  text-align: center;
+  padding: 20px;
+  color: #888;
+  font-size: 14px;
+  border-top: 1px solid #f0f0f0;
+  background-color: #FFFFFF;
+}
+
+/* ========== ANIMATIONS ========== */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.decouverte-header {
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.secteur-card {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.secteur-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.secteur-card:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.secteur-card:nth-child(3) {
+  animation-delay: 0.2s;
+}
+
+.secteur-card:nth-child(4) {
+  animation-delay: 0.25s;
+}
+
+.secteur-card:nth-child(5) {
+  animation-delay: 0.3s;
+}
+
+.secteur-card:nth-child(6) {
+  animation-delay: 0.35s;
+}
+
+/* ========== RESPONSIVE ========== */
+@media (max-width: 1024px) {
+  .secteurs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 18px;
+  }
+
+  .main-decouverte {
+    padding: 40px 30px;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 35px;
+  }
+}
+
+@media (max-width: 768px) {
+  .burger-btn {
+    display: block;
+  }
+
+  .desktop-nav {
+    display: none;
+  }
+
+  .navbar-decouverte {
+    padding: 15px 20px;
+  }
+
+  .logo-img-small {
+    max-width: 100px;
+  }
+
+  .main-decouverte {
+    padding: 30px 20px;
+  }
+
+  .decouverte-title {
+    font-size: 28px;
+  }
+
+  .decouverte-subtitle {
+    font-size: 16px;
+  }
+
+  .secteurs-grid {
+    grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+    gap: 14px;
+  }
+
+  .secteur-card {
+    padding: 18px 14px;
+  }
+
+  .secteur-icon-wrapper {
+    width: 55px;
+    height: 55px;
+  }
+
+  .secteur-icon {
+    font-size: 36px;
+    stroke-width: 1.5;
+  }
+
+  .secteur-nom {
+    font-size: 16px;
+  }
+
+  .secteur-description {
+    font-size: 12px;
+  }
+
+  /* Témoignages responsive - Harmonisé */
+  .temoignages-section {
+    padding: 60px 20px;
+  }
+
+  .profile-avatar {
+    width: 45px;
+    height: 45px;
+    margin-left: -10px;
+  }
+
+  .star {
+    font-size: 20px;
+  }
+
+  .temoignage-text {
+    font-size: 16px; /* = decouverte-subtitle mobile */
+  }
+
+  .jobeur-button {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  /* Services responsive - Harmonisé */
+  .services-section {
+    padding: 60px 20px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .service-card {
+    padding: 25px 15px;
+  }
+
+  .service-icon-circle {
+    width: 70px;
+    height: 70px;
+  }
+
+  .service-icon {
+    font-size: 32px;
+  }
+
+  .service-title {
+    font-size: 16px; /* = secteur-nom mobile */
+  }
+
+  .service-description {
+    font-size: 12px; /* = secteur-description mobile */
+  }
+}
+
+@media (max-width: 480px) {
+  .decouverte-title {
+    font-size: 24px;
+  }
+
+  .decouverte-subtitle {
+    font-size: 15px;
+  }
+
+  .secteurs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+  }
+
+  .secteur-card {
+    padding: 16px 12px;
+  }
+
+  .secteur-icon-wrapper {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 12px;
+  }
+
+  .secteur-icon {
+    font-size: 32px;
+    stroke-width: 1.5;
+  }
+
+  .secteur-nom {
+    font-size: 14px;
+  }
+
+  .secteur-description {
+    font-size: 11px;
+  }
+
+  .cta-text {
+    font-size: 16px;
+  }
+
+  .cta-button {
+    width: 100%;
+    padding: 14px 30px;
+  }
+
+  .sidebar-menu {
+    width: 100%;
+    right: -100%;
+  }
+
+  /* Témoignages responsive - Harmonisé */
+  .temoignages-section {
+    padding: 50px 15px;
+  }
+
+  .profile-avatar {
+    width: 40px;
+    height: 40px;
+    margin-left: -8px;
+  }
+
+  .star {
+    font-size: 18px;
+  }
+
+  .temoignage-text {
+    font-size: 15px; /* = decouverte-subtitle mobile */
+  }
+
+  .jobeur-button {
+    padding: 14px 30px;
+    font-size: 15px;
+  }
+
+  /* Services responsive - Harmonisé */
+  .services-section {
+    padding: 50px 15px;
+  }
+
+  .service-card {
+    padding: 20px 10px;
+  }
+
+  .service-icon-circle {
+    width: 65px;
+    height: 65px;
+  }
+
+  .service-icon {
+    font-size: 28px;
+  }
+
+  .service-title {
+    font-size: 14px; /* = secteur-nom mobile */
+  }
+
+  .service-description {
+    font-size: 11px; /* = secteur-description mobile */
+  }
+}
+
+/* ========== ACCESSIBILITÉ ========== */
+.secteur-card:focus {
+  outline: 3px solid #3DC7C9;
+  outline-offset: 2px;
+}
+
+.nav-btn:focus-visible,
+.cta-button:focus-visible,
+.burger-btn:focus-visible,
+.close-btn:focus-visible,
+.sidebar-link:focus-visible,
+.jobeur-button:focus-visible {
+  outline: 3px solid #3DC7C9;
+  outline-offset: 2px;
+}

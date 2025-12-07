@@ -1,0 +1,422 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { 
+  FiHome, 
+  FiZap, 
+  FiMonitor, 
+  FiPenTool, 
+  FiHeart,
+  FiBookOpen,
+  FiShoppingCart,
+  FiTruck,
+  FiTrendingUp,
+  FiScissors,
+  FiFileText,
+  FiTrendingUp as FiMarketing,
+  FiDollarSign,
+  FiCalendar,
+  FiCoffee,
+  FiTool,
+  FiMenu,
+  FiX,
+  FiSearch,
+  FiUsers,
+  FiMapPin,
+  FiBriefcase,
+  FiBell,
+  FiStar
+} from 'react-icons/fi';
+import { COLORS } from '../styles/colors';
+import logo from '../assets/logo.png';
+import './decouverte.css';
+
+function Decouverte() {
+  const navigate = useNavigate();
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  // Liste des secteurs d'activité
+  const secteurs = [
+    {
+      id: 'batiment',
+      nom: 'Bâtiment & Travaux',
+      icon: FiHome,
+      description: 'Maçons, menuisiers, peintres...'
+    },
+    {
+      id: 'electricite-plomberie',
+      nom: 'Électricité & Plomberie',
+      icon: FiZap,
+      description: 'Électriciens, plombiers, climatisation...'
+    },
+    {
+      id: 'informatique',
+      nom: 'Informatique & Tech',
+      icon: FiMonitor,
+      description: 'Développeurs, techniciens, réseaux...'
+    },
+    {
+      id: 'design',
+      nom: 'Design & Création',
+      icon: FiPenTool,
+      description: 'Graphistes, designers, illustrateurs...'
+    },
+    {
+      id: 'sante',
+      nom: 'Santé & Bien-être',
+      icon: FiHeart,
+      description: 'Infirmiers, kinés, esthétique...'
+    },
+    {
+      id: 'education',
+      nom: 'Éducation & Formation',
+      icon: FiBookOpen,
+      description: 'Professeurs, formateurs, coachs...'
+    },
+    {
+      id: 'commerce',
+      nom: 'Commerce & Vente',
+      icon: FiShoppingCart,
+      description: 'Vendeurs, commerciaux, e-commerce...'
+    },
+    {
+      id: 'transport',
+      nom: 'Transport & Logistique',
+      icon: FiTruck,
+      description: 'Chauffeurs, livreurs, logisticiens...'
+    },
+    {
+      id: 'agriculture',
+      nom: 'Agriculture',
+      icon: FiTrendingUp,
+      description: 'Agronomes, éleveurs, pêcheurs...'
+    },
+    {
+      id: 'artisanat',
+      nom: 'Artisanat',
+      icon: FiScissors,
+      description: 'Couturiers, bijoutiers, potiers...'
+    },
+    {
+      id: 'juridique',
+      nom: 'Juridique & Administratif',
+      icon: FiFileText,
+      description: 'Avocats, notaires, assistants...'
+    },
+    {
+      id: 'marketing',
+      nom: 'Marketing & Communication',
+      icon: FiMarketing,
+      description: 'Community managers, publicitaires...'
+    },
+    {
+      id: 'finance',
+      nom: 'Finance & Comptabilité',
+      icon: FiDollarSign,
+      description: 'Comptables, auditeurs, fiscalistes...'
+    },
+    {
+      id: 'evenementiel',
+      nom: 'Événementiel',
+      icon: FiCalendar,
+      description: 'Organisateurs, animateurs, DJ...'
+    },
+    {
+      id: 'restauration',
+      nom: 'Restauration',
+      icon: FiCoffee,
+      description: 'Cuisiniers, traiteurs, pâtissiers...'
+    },
+    {
+      id: 'mecanique',
+      nom: 'Mécanique & Automobile',
+      icon: FiTool,
+      description: 'Mécaniciens, garagistes, carrossiers...'
+    }
+  ];
+
+  // Liste des services
+  const services = [
+    {
+      id: 'decouverte',
+      nom: 'DÉCOUVERTE',
+      icon: FiSearch,
+      description: 'Explorez un catalogue riche et diversifié de professionnels issus de multiples secteurs d\'activité, en Afrique et au-delà.'
+    },
+    {
+      id: 'marketplace',
+      nom: 'MARKETPLACE',
+      icon: FiUsers,
+      description: 'Accédez à un vaste réseau de freelances et d\'entreprises spécialisées, prêts à mettre leur expertise au service de vos projets.'
+    },
+    {
+      id: 'localisation',
+      nom: 'LOCALISATION',
+      icon: FiMapPin,
+      description: 'Localisez en temps réel les institutions et lieux essentiels autour de vous : restaurants, pharmacies, hôpitaux, garages, agences, etc.'
+    },
+    {
+      id: 'portfolio',
+      nom: 'PORTFOLIO',
+      icon: FiBriefcase,
+      description: 'Découvrez le savoir-faire de nos professionnels à travers des projets concrets, et trouvez de vraies raisons de les choisir.'
+    },
+    {
+      id: 'jobty-alerte',
+      nom: 'JOBTY ALERTE',
+      icon: FiBell,
+      description: 'Recevez l\'assistance immédiat d\'un professionnel qualifié, à tout moment et où que vous soyez. 24h/24 et 7j/7'
+    },
+    {
+      id: 'job-xperience',
+      nom: 'JOB XPERIENCE',
+      icon: FiBriefcase,
+      description: 'Démarrez et construisez votre carrière professionnelle ici en trouvant le poste idéal auprès de nos professionnels'
+    }
+  ];
+
+  const handleSecteurClick = (secteurId) => {
+    navigate(`/marketplace?secteur=${secteurId}`);
+    setMenuOpen(false);
+  };
+
+  const toggleMenu = () => {
+    setMenuOpen(!menuOpen);
+  };
+
+  const closeMenu = () => {
+    setMenuOpen(false);
+  };
+
+  return (
+    <div className="decouverte-container">
+      {/* Header / Navigation */}
+      <header className="navbar-decouverte">
+        <div 
+          className="logo-decouverte" 
+          onClick={() => navigate('/')}
+          style={{ cursor: 'pointer' }}
+        >
+          <img src={logo} alt="Jobty" className="logo-img-small" />
+        </div>
+
+        {/* Bouton burger pour mobile */}
+        <button 
+          className="burger-btn"
+          onClick={toggleMenu}
+          aria-label="Menu"
+        >
+          <FiMenu />
+        </button>
+
+        {/* Navigation desktop */}
+        <nav className="nav-links-decouverte desktop-nav">
+          <button 
+            className="nav-btn"
+            onClick={() => navigate('/')}
+          >
+            Accueil
+          </button>
+          <button 
+            className="nav-btn"
+            onClick={() => navigate('/marketplace')}
+          >
+            Marketplace
+          </button>
+          <button 
+            className="nav-btn nav-btn-primary"
+            style={{ backgroundColor: COLORS.primary }}
+            onClick={() => navigate('/connexion')}
+          >
+            Connexion
+          </button>
+        </nav>
+      </header>
+
+      {/* Menu burger latéral pour mobile */}
+      <div className={`sidebar-menu ${menuOpen ? 'open' : ''}`}>
+        <div className="sidebar-header">
+          <img src={logo} alt="Jobty" className="sidebar-logo" />
+          <button 
+            className="close-btn"
+            onClick={closeMenu}
+            aria-label="Fermer le menu"
+          >
+            <FiX />
+          </button>
+        </div>
+
+        <nav className="sidebar-nav">
+          <button 
+            className="sidebar-link"
+            onClick={() => {
+              navigate('/');
+              closeMenu();
+            }}
+          >
+            Accueil
+          </button>
+          <button 
+            className="sidebar-link"
+            onClick={() => {
+              navigate('/marketplace');
+              closeMenu();
+            }}
+          >
+            Marketplace
+          </button>
+          <button 
+            className="sidebar-link sidebar-link-primary"
+            style={{ backgroundColor: COLORS.primary }}
+            onClick={() => {
+              navigate('/connexion');
+              closeMenu();
+            }}
+          >
+            Connexion
+          </button>
+        </nav>
+      </div>
+
+      {/* Overlay pour fermer le menu en cliquant à côté */}
+      {menuOpen && (
+        <div 
+          className="sidebar-overlay"
+          onClick={closeMenu}
+        ></div>
+      )}
+
+      {/* Contenu principal */}
+      <main className="main-decouverte">
+        {/* Titre de la page */}
+        <div className="decouverte-header">
+          <h1 className="decouverte-title">
+            <span style={{ color: COLORS.secondary }}>Explorez nos</span>{' '}
+            <span style={{ color: COLORS.primary }}>secteurs d'activité</span>
+          </h1>
+          <p className="decouverte-subtitle">
+            Trouvez le professionnel qu'il vous faut parmi plus de 16 domaines de compétences
+          </p>
+        </div>
+
+        {/* Grille des secteurs */}
+        <div className="secteurs-grid">
+          {secteurs.map((secteur) => {
+            const IconComponent = secteur.icon;
+            return (
+              <div
+                key={secteur.id}
+                className="secteur-card"
+                onClick={() => handleSecteurClick(secteur.id)}
+                role="button"
+                tabIndex={0}
+                onKeyPress={(e) => {
+                  if (e.key === 'Enter') handleSecteurClick(secteur.id);
+                }}
+              >
+                <div className="secteur-icon-wrapper">
+                  <IconComponent 
+                    className="secteur-icon" 
+                    style={{ color: COLORS.primary }}
+                  />
+                </div>
+                <h3 className="secteur-nom">{secteur.nom}</h3>
+                <p className="secteur-description">{secteur.description}</p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Call to action */}
+        <div className="decouverte-cta">
+          <p className="cta-text">Vous ne trouvez pas votre secteur ?</p>
+          <button 
+            className="cta-button"
+            style={{ backgroundColor: COLORS.primary }}
+            onClick={() => navigate('/marketplace')}
+          >
+            Voir tous les professionnels
+          </button>
+        </div>
+      </main>
+
+      {/* SECTION TÉMOIGNAGES */}
+      <section className="temoignages-section">
+        <div className="temoignages-container">
+          {/* Ligne décorative turquoise */}
+          <div className="decorative-line" style={{ backgroundColor: COLORS.primary }}></div>
+
+         {/* Photos de profil chevauchées */}
+<div className="profiles-row">
+  {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
+    <div 
+      key={num} 
+      className="profile-avatar"
+      style={{ 
+        backgroundImage: `url('/images/avatars/avatar${num}.jpg')`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        zIndex: 10 - num
+      }}
+    >
+    </div>
+  ))}
+</div>
+
+          {/* Étoiles */}
+          <div className="stars-rating">
+            <FiStar className="star filled" />
+            <FiStar className="star filled" />
+            <FiStar className="star filled" />
+            <FiStar className="star filled" />
+            <FiStar className="star half-filled" />
+          </div>
+
+          {/* Texte témoignage */}
+          <p className="temoignage-text">
+            Noté par nos utilisateurs meilleure plateforme<br />
+            de mise en relation professionnelle
+          </p>
+
+          {/* Bouton CTA */}
+          <button 
+            className="jobeur-button"
+            style={{ backgroundColor: COLORS.primary }}
+            onClick={() => navigate('/inscription')}
+          >
+            Devenir jobeur maintenant
+          </button>
+        </div>
+      </section>
+
+      {/* SECTION SERVICES */}
+      <section className="services-section">
+        <div className="services-container">
+          <div className="services-grid">
+            {services.map((service) => {
+              const IconComponent = service.icon;
+              return (
+                <div key={service.id} className="service-card">
+                  <div 
+                    className="service-icon-circle"
+                    style={{ backgroundColor: COLORS.primary }}
+                  >
+                    <IconComponent className="service-icon" />
+                  </div>
+                  <h3 className="service-title">{service.nom}</h3>
+                  <p className="service-description">{service.description}</p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="footer-decouverte">
+        <p>© 2024 Jobty - Connectons les talents d'Afrique</p>
+      </footer>
+    </div>
+  );
+}
+
+export default Decouverte;
