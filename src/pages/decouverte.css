@@ -51,16 +51,16 @@
 .nav-links-decouverte {
   display: flex;
   align-items: center;
-  gap: 20px;
+  gap: 15px;
 }
 
 .nav-btn {
-  padding: 10px 20px;
+  padding: 10px 18px;
   background: transparent;
   border: none;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
-  color: #333;
+  color: #666;
   cursor: pointer;
   transition: all 0.3s ease;
   border-radius: 8px;
@@ -69,6 +69,11 @@
 .nav-btn:hover {
   background-color: #f5f5f5;
   color: #3DC7C9;
+}
+
+.nav-btn.active {
+  color: #3DC7C9;
+  font-weight: 600;
 }
 
 .nav-btn-primary {
@@ -132,14 +137,14 @@
   display: flex;
   flex-direction: column;
   padding: 20px;
-  gap: 12px;
+  gap: 8px;
 }
 
 .sidebar-link {
   padding: 14px 20px;
   background: transparent;
   border: none;
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 500;
   color: #333;
   cursor: pointer;
@@ -154,10 +159,17 @@
   color: #3DC7C9;
 }
 
+.sidebar-link.active {
+  background-color: #f0fafb;
+  color: #3DC7C9;
+  font-weight: 600;
+}
+
 .sidebar-link-primary {
   color: white !important;
   border-radius: 50px;
   margin-top: 12px;
+  text-align: center;
 }
 
 .sidebar-link-primary:hover {
@@ -392,7 +404,7 @@
   fill: url(#half);
 }
 
-/* Texte témoignage - Harmonisé avec decouverte-subtitle */
+/* Texte témoignage */
 .temoignage-text {
   font-size: 18px;
   color: #666;
@@ -401,7 +413,7 @@
   max-width: 600px;
 }
 
-/* Bouton Jobeur - Harmonisé avec cta-button */
+/* Bouton Jobeur */
 .jobeur-button {
   padding: 16px 40px;
   border: none;
@@ -467,7 +479,6 @@
   stroke-width: 1.5;
 }
 
-/* Titre service - Harmonisé avec secteur-nom */
 .service-title {
   font-size: 17px;
   font-weight: 600;
@@ -476,7 +487,6 @@
   letter-spacing: 1px;
 }
 
-/* Description service - Harmonisée avec secteur-description */
 .service-description {
   font-size: 13px;
   color: white;
@@ -539,6 +549,17 @@
 }
 
 /* ========== RESPONSIVE ========== */
+@media (max-width: 1200px) {
+  .nav-links-decouverte {
+    gap: 10px;
+  }
+
+  .nav-btn {
+    padding: 8px 14px;
+    font-size: 13px;
+  }
+}
+
 @media (max-width: 1024px) {
   .secteurs-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -556,6 +577,7 @@
 }
 
 @media (max-width: 768px) {
+  /* Afficher le burger, cacher la nav desktop */
   .burger-btn {
     display: block;
   }
@@ -611,7 +633,7 @@
     font-size: 12px;
   }
 
-  /* Témoignages responsive - Harmonisé */
+  /* Témoignages responsive */
   .temoignages-section {
     padding: 60px 20px;
   }
@@ -627,7 +649,7 @@
   }
 
   .temoignage-text {
-    font-size: 16px; /* = decouverte-subtitle mobile */
+    font-size: 16px;
   }
 
   .jobeur-button {
@@ -635,7 +657,7 @@
     max-width: 350px;
   }
 
-  /* Services responsive - Harmonisé */
+  /* Services responsive */
   .services-section {
     padding: 60px 20px;
   }
@@ -659,11 +681,11 @@
   }
 
   .service-title {
-    font-size: 16px; /* = secteur-nom mobile */
+    font-size: 16px;
   }
 
   .service-description {
-    font-size: 12px; /* = secteur-description mobile */
+    font-size: 12px;
   }
 }
 
@@ -718,7 +740,7 @@
     right: -100%;
   }
 
-  /* Témoignages responsive - Harmonisé */
+  /* Témoignages responsive */
   .temoignages-section {
     padding: 50px 15px;
   }
@@ -734,7 +756,7 @@
   }
 
   .temoignage-text {
-    font-size: 15px; /* = decouverte-subtitle mobile */
+    font-size: 15px;
   }
 
   .jobeur-button {
@@ -742,7 +764,7 @@
     font-size: 15px;
   }
 
-  /* Services responsive - Harmonisé */
+  /* Services responsive */
   .services-section {
     padding: 50px 15px;
   }
@@ -761,11 +783,11 @@
   }
 
   .service-title {
-    font-size: 14px; /* = secteur-nom mobile */
+    font-size: 14px;
   }
 
   .service-description {
-    font-size: 11px; /* = secteur-description mobile */
+    font-size: 11px;
   }
 }
 

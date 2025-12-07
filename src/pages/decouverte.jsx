@@ -211,16 +211,34 @@ function Decouverte() {
         {/* Navigation desktop */}
         <nav className="nav-links-decouverte desktop-nav">
           <button 
-            className="nav-btn"
-            onClick={() => navigate('/')}
+            className="nav-btn active"
+            onClick={() => navigate('/decouverte')}
           >
-            Accueil
+            Découverte
           </button>
           <button 
             className="nav-btn"
             onClick={() => navigate('/marketplace')}
           >
             Marketplace
+          </button>
+          <button 
+            className="nav-btn"
+            onClick={() => navigate('/portfolio')}
+          >
+            Portfolio
+          </button>
+          <button 
+            className="nav-btn"
+            onClick={() => navigate('/job-alerte')}
+          >
+            Job Alert
+          </button>
+          <button 
+            className="nav-btn"
+            onClick={() => navigate('/job-experience')}
+          >
+            Job Expérience
           </button>
           <button 
             className="nav-btn nav-btn-primary"
@@ -247,13 +265,13 @@ function Decouverte() {
 
         <nav className="sidebar-nav">
           <button 
-            className="sidebar-link"
+            className="sidebar-link active"
             onClick={() => {
-              navigate('/');
+              navigate('/decouverte');
               closeMenu();
             }}
           >
-            Accueil
+            Découverte
           </button>
           <button 
             className="sidebar-link"
@@ -263,6 +281,33 @@ function Decouverte() {
             }}
           >
             Marketplace
+          </button>
+          <button 
+            className="sidebar-link"
+            onClick={() => {
+              navigate('/portfolio');
+              closeMenu();
+            }}
+          >
+            Portfolio
+          </button>
+          <button 
+            className="sidebar-link"
+            onClick={() => {
+              navigate('/job-alerte');
+              closeMenu();
+            }}
+          >
+            Job Alert
+          </button>
+          <button 
+            className="sidebar-link"
+            onClick={() => {
+              navigate('/job-experience');
+              closeMenu();
+            }}
+          >
+            Job Expérience
           </button>
           <button 
             className="sidebar-link sidebar-link-primary"
@@ -345,22 +390,23 @@ function Decouverte() {
           {/* Ligne décorative turquoise */}
           <div className="decorative-line" style={{ backgroundColor: COLORS.primary }}></div>
 
-         {/* Photos de profil chevauchées */}
-<div className="profiles-row">
-  {[1, 2, 3, 4, 5, 6, 7, 8].map((num) => (
-    <div 
-      key={num} 
-      className="profile-avatar"
-      style={{ 
-        backgroundImage: `url('/images/avatars/avatar${num}.jpg')`,
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-        zIndex: 10 - num
-      }}
-    >
-    </div>
-  ))}
-</div>
+          {/* Photos de profil chevauchées avec DiceBear */}
+          <div className="profiles-row">
+            {['Amina', 'Kofi', 'Fatou', 'Ahmed', 'Aisha', 'Kwame', 'Zara', 'Omar'].map((name, index) => (
+              <div 
+                key={index} 
+                className="profile-avatar"
+                style={{ 
+                  backgroundImage: `url('https://api.dicebear.com/7.x/avataaars/svg?seed=${name}')`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  zIndex: 10 - index
+                }}
+                title={name}
+              >
+              </div>
+            ))}
+          </div>
 
           {/* Étoiles */}
           <div className="stars-rating">
@@ -381,7 +427,7 @@ function Decouverte() {
           <button 
             className="jobeur-button"
             style={{ backgroundColor: COLORS.primary }}
-            onClick={() => navigate('/inscription')}
+            onClick={() => navigate('/connexion')}
           >
             Devenir jobeur maintenant
           </button>
