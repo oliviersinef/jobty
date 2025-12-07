@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import { FiSearch } from 'react-icons/fi';
 import { COLORS } from '../styles/colors';
 import logo from '../assets/logo.png';
-import './Home.css';
+import './home.css';
 
 function Home() {
   const navigate = useNavigate();
