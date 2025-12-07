@@ -7,12 +7,8 @@
   position: relative;
 }
 
-/* ========== NAVBAR ========== */
+/* ========== HEADER ========== */
 .navbar-decouverte {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 50px;
   background-color: #FFFFFF;
   border-bottom: 1px solid #f0f0f0;
   position: sticky;
@@ -21,17 +17,103 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
 }
 
-.logo-decouverte {
+.header-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 15px 50px;
   display: flex;
+  justify-content: space-between;
   align-items: center;
 }
 
-.logo-img-small {
+.header-logo {
+  cursor: pointer;
+}
+
+.header-logo img {
   max-width: 120px;
   height: auto;
 }
 
-/* Bouton burger (caché sur desktop) */
+.header-nav {
+  display: flex;
+  gap: 30px;
+}
+
+.header-nav .nav-item {
+  text-decoration: none;
+  color: #666;
+  font-size: 15px;
+  font-weight: 500;
+  transition: color 0.3s ease;
+  padding: 8px 0;
+  position: relative;
+}
+
+.header-nav .nav-item:hover {
+  color: #3DC7C9;
+}
+
+.header-nav .nav-item.active {
+  color: #3DC7C9;
+  font-weight: 600;
+}
+
+.header-nav .nav-item.active::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background-color: #3DC7C9;
+  border-radius: 2px;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.profile-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3DC7C9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  cursor: pointer;
+  position: relative;
+  transition: transform 0.3s ease;
+}
+
+.profile-icon:hover {
+  transform: scale(1.05);
+}
+
+.profile-icon svg {
+  font-size: 20px;
+}
+
+.notification-badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: #ff4444;
+  color: white;
+  font-size: 10px;
+  font-weight: 600;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .burger-btn {
   display: none;
   background: none;
@@ -39,55 +121,9 @@
   font-size: 28px;
   color: #333;
   cursor: pointer;
-  padding: 8px;
-  transition: color 0.3s ease;
 }
 
-.burger-btn:hover {
-  color: #3DC7C9;
-}
-
-/* Navigation desktop */
-.nav-links-decouverte {
-  display: flex;
-  align-items: center;
-  gap: 15px;
-}
-
-.nav-btn {
-  padding: 10px 18px;
-  background: transparent;
-  border: none;
-  font-size: 14px;
-  font-weight: 500;
-  color: #666;
-  cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 8px;
-}
-
-.nav-btn:hover {
-  background-color: #f5f5f5;
-  color: #3DC7C9;
-}
-
-.nav-btn.active {
-  color: #3DC7C9;
-  font-weight: 600;
-}
-
-.nav-btn-primary {
-  color: white !important;
-  border-radius: 50px;
-  padding: 10px 24px;
-}
-
-.nav-btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(61, 199, 201, 0.3);
-}
-
-/* ========== MENU BURGER LATÉRAL ========== */
+/* ========== SIDEBAR MOBILE ========== */
 .sidebar-menu {
   position: fixed;
   top: 0;
@@ -116,7 +152,6 @@
 
 .sidebar-logo {
   max-width: 100px;
-  height: auto;
 }
 
 .close-btn {
@@ -125,58 +160,48 @@
   font-size: 28px;
   color: #333;
   cursor: pointer;
-  padding: 8px;
-  transition: color 0.3s ease;
-}
-
-.close-btn:hover {
-  color: #3DC7C9;
 }
 
 .sidebar-nav {
   display: flex;
   flex-direction: column;
   padding: 20px;
-  gap: 8px;
+  gap: 5px;
 }
 
-.sidebar-link {
-  padding: 14px 20px;
-  background: transparent;
-  border: none;
-  font-size: 15px;
-  font-weight: 500;
+.sidebar-nav a {
+  text-decoration: none;
   color: #333;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  font-size: 16px;
+  font-weight: 500;
+  padding: 15px;
   border-radius: 8px;
-  text-align: left;
-  width: 100%;
+  transition: all 0.3s ease;
 }
 
-.sidebar-link:hover {
-  background-color: #f5f5f5;
-  color: #3DC7C9;
-}
-
-.sidebar-link.active {
+.sidebar-nav a:hover,
+.sidebar-nav a.active {
   background-color: #f0fafb;
   color: #3DC7C9;
-  font-weight: 600;
 }
 
-.sidebar-link-primary {
-  color: white !important;
+.sidebar-connexion-btn {
+  margin-top: 15px;
+  padding: 14px;
+  background-color: #3DC7C9;
+  color: white;
+  border: none;
   border-radius: 50px;
-  margin-top: 12px;
-  text-align: center;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
 }
 
-.sidebar-link-primary:hover {
-  opacity: 0.9;
+.sidebar-connexion-btn:hover {
+  background-color: #35b5b7;
 }
 
-/* Overlay sombre derrière le menu */
 .sidebar-overlay {
   position: fixed;
   top: 0;
@@ -185,16 +210,6 @@
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5);
   z-index: 999;
-  animation: fadeIn 0.3s ease;
-}
-
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
 }
 
 /* ========== MAIN CONTENT ========== */
@@ -348,14 +363,12 @@
   gap: 30px;
 }
 
-/* Ligne décorative turquoise */
 .decorative-line {
   width: 100px;
   height: 3px;
   border-radius: 2px;
 }
 
-/* Photos de profil chevauchées */
 .profiles-row {
   display: flex;
   justify-content: center;
@@ -382,7 +395,6 @@
   z-index: 20 !important;
 }
 
-/* Étoiles */
 .stars-rating {
   display: flex;
   gap: 6px;
@@ -404,7 +416,6 @@
   fill: url(#half);
 }
 
-/* Texte témoignage */
 .temoignage-text {
   font-size: 18px;
   color: #666;
@@ -413,7 +424,6 @@
   max-width: 600px;
 }
 
-/* Bouton Jobeur */
 .jobeur-button {
   padding: 16px 40px;
   border: none;
@@ -550,17 +560,28 @@
 
 /* ========== RESPONSIVE ========== */
 @media (max-width: 1200px) {
-  .nav-links-decouverte {
-    gap: 10px;
+  .header-nav {
+    gap: 20px;
   }
 
-  .nav-btn {
-    padding: 8px 14px;
-    font-size: 13px;
+  .header-nav .nav-item {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 1024px) {
+  .header-content {
+    padding: 15px 30px;
+  }
+
+  .header-nav {
+    gap: 15px;
+  }
+
+  .header-nav .nav-item {
+    font-size: 13px;
+  }
+
   .secteurs-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 18px;
@@ -577,20 +598,19 @@
 }
 
 @media (max-width: 768px) {
-  /* Afficher le burger, cacher la nav desktop */
-  .burger-btn {
-    display: block;
-  }
-
   .desktop-nav {
     display: none;
   }
 
-  .navbar-decouverte {
+  .burger-btn {
+    display: block;
+  }
+
+  .header-content {
     padding: 15px 20px;
   }
 
-  .logo-img-small {
+  .header-logo img {
     max-width: 100px;
   }
 
@@ -633,7 +653,6 @@
     font-size: 12px;
   }
 
-  /* Témoignages responsive */
   .temoignages-section {
     padding: 60px 20px;
   }
@@ -657,7 +676,6 @@
     max-width: 350px;
   }
 
-  /* Services responsive */
   .services-section {
     padding: 60px 20px;
   }
@@ -690,6 +708,11 @@
 }
 
 @media (max-width: 480px) {
+  .sidebar-menu {
+    width: 100%;
+    right: -100%;
+  }
+
   .decouverte-title {
     font-size: 24px;
   }
@@ -735,12 +758,6 @@
     padding: 14px 30px;
   }
 
-  .sidebar-menu {
-    width: 100%;
-    right: -100%;
-  }
-
-  /* Témoignages responsive */
   .temoignages-section {
     padding: 50px 15px;
   }
@@ -764,7 +781,6 @@
     font-size: 15px;
   }
 
-  /* Services responsive */
   .services-section {
     padding: 50px 15px;
   }
@@ -797,12 +813,14 @@
   outline-offset: 2px;
 }
 
-.nav-btn:focus-visible,
+.header-nav .nav-item:focus-visible,
 .cta-button:focus-visible,
 .burger-btn:focus-visible,
 .close-btn:focus-visible,
-.sidebar-link:focus-visible,
-.jobeur-button:focus-visible {
+.sidebar-nav a:focus-visible,
+.sidebar-connexion-btn:focus-visible,
+.jobeur-button:focus-visible,
+.profile-icon:focus-visible {
   outline: 3px solid #3DC7C9;
   outline-offset: 2px;
 }

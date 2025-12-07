@@ -353,6 +353,15 @@ function Marketplace() {
             >
               Job alerte
             </a>
+
+           <a 
+              href="/job-experience" 
+              className="nav-item"
+              onClick={(e) => { e.preventDefault(); navigate('/job-experience'); }}
+            >
+              Job expérience
+            </a>
+          
           </nav>
 
           <div className="header-actions">
@@ -403,6 +412,10 @@ function Marketplace() {
           </a>
           <a href="/job-alerte" onClick={(e) => { e.preventDefault(); navigate('/job-alerte'); closeMenu(); }}>
             Job alerte
+          </a>
+
+          <a href="/job-experience" onClick={(e) => { e.preventDefault(); navigate('/job-experience'); closeMenu(); }}>
+            Job experience
           </a>
           <button 
             className="sidebar-connexion-btn"

@@ -24,7 +24,8 @@ import {
   FiMapPin,
   FiBriefcase,
   FiBell,
-  FiStar
+  FiStar,
+  FiUser
 } from 'react-icons/fi';
 import { COLORS } from '../styles/colors';
 import logo from '../assets/logo.png';
@@ -189,17 +190,72 @@ function Decouverte() {
 
   return (
     <div className="decouverte-container">
-      {/* Header / Navigation */}
-      <header className="navbar-decouverte">
-        <div 
-          className="logo-decouverte" 
-          onClick={() => navigate('/')}
-          style={{ cursor: 'pointer' }}
+  {/* Header / Navigation */}
+  <header className="navbar-decouverte">
+    <div className="header-content">
+      <div 
+        className="header-logo"
+        onClick={() => navigate('/')}
+      >
+        <img src={logo} alt="Jobty" />
+      </div>
+
+      {/* Navigation Desktop */}
+      <nav className="header-nav desktop-nav">
+        <a 
+          href="/decouverte" 
+          className="nav-item active"
+          onClick={(e) => { e.preventDefault(); navigate('/decouverte'); }}
         >
-          <img src={logo} alt="Jobty" className="logo-img-small" />
+          Découverte
+        </a>
+        <a 
+          href="/marketplace" 
+          className="nav-item"
+          onClick={(e) => { e.preventDefault(); navigate('/marketplace'); }}
+        >
+          Marketplace
+        </a>
+        <a 
+          href="/portfolio" 
+          className="nav-item"
+          onClick={(e) => { e.preventDefault(); navigate('/portfolio'); }}
+        >
+          Portfolio
+        </a>
+        <a 
+          href="/localisation" 
+          className="nav-item"
+          onClick={(e) => { e.preventDefault(); navigate('/localisation'); }}
+        >
+          Localisation
+        </a>
+        <a 
+          href="/job-alerte" 
+          className="nav-item"
+          onClick={(e) => { e.preventDefault(); navigate('/job-alerte'); }}
+        >
+          Job Alert
+        </a>
+        <a 
+          href="/job-experience" 
+          className="nav-item"
+          onClick={(e) => { e.preventDefault(); navigate('/job-experience'); }}
+        >
+          Job Expérience
+        </a>
+      </nav>
+
+      <div className="header-actions">
+        <div 
+          className="profile-icon"
+          onClick={() => navigate('/connexion')}
+        >
+          <FiUser />
+          <span className="notification-badge">0</span>
         </div>
 
-        {/* Bouton burger pour mobile */}
+        {/* Bouton burger mobile */}
         <button 
           className="burger-btn"
           onClick={toggleMenu}
@@ -207,121 +263,72 @@ function Decouverte() {
         >
           <FiMenu />
         </button>
-
-        {/* Navigation desktop */}
-        <nav className="nav-links-decouverte desktop-nav">
-          <button 
-            className="nav-btn active"
-            onClick={() => navigate('/decouverte')}
-          >
-            Découverte
-          </button>
-          <button 
-            className="nav-btn"
-            onClick={() => navigate('/marketplace')}
-          >
-            Marketplace
-          </button>
-          <button 
-            className="nav-btn"
-            onClick={() => navigate('/portfolio')}
-          >
-            Portfolio
-          </button>
-          <button 
-            className="nav-btn"
-            onClick={() => navigate('/job-alerte')}
-          >
-            Job Alert
-          </button>
-          <button 
-            className="nav-btn"
-            onClick={() => navigate('/job-experience')}
-          >
-            Job Expérience
-          </button>
-          <button 
-            className="nav-btn nav-btn-primary"
-            style={{ backgroundColor: COLORS.primary }}
-            onClick={() => navigate('/connexion')}
-          >
-            Connexion
-          </button>
-        </nav>
-      </header>
-
-      {/* Menu burger latéral pour mobile */}
-      <div className={`sidebar-menu ${menuOpen ? 'open' : ''}`}>
-        <div className="sidebar-header">
-          <img src={logo} alt="Jobty" className="sidebar-logo" />
-          <button 
-            className="close-btn"
-            onClick={closeMenu}
-            aria-label="Fermer le menu"
-          >
-            <FiX />
-          </button>
-        </div>
-
-        <nav className="sidebar-nav">
-          <button 
-            className="sidebar-link active"
-            onClick={() => {
-              navigate('/decouverte');
-              closeMenu();
-            }}
-          >
-            Découverte
-          </button>
-          <button 
-            className="sidebar-link"
-            onClick={() => {
-              navigate('/marketplace');
-              closeMenu();
-            }}
-          >
-            Marketplace
-          </button>
-          <button 
-            className="sidebar-link"
-            onClick={() => {
-              navigate('/portfolio');
-              closeMenu();
-            }}
-          >
-            Portfolio
-          </button>
-          <button 
-            className="sidebar-link"
-            onClick={() => {
-              navigate('/job-alerte');
-              closeMenu();
-            }}
-          >
-            Job Alert
-          </button>
-          <button 
-            className="sidebar-link"
-            onClick={() => {
-              navigate('/job-experience');
-              closeMenu();
-            }}
-          >
-            Job Expérience
-          </button>
-          <button 
-            className="sidebar-link sidebar-link-primary"
-            style={{ backgroundColor: COLORS.primary }}
-            onClick={() => {
-              navigate('/connexion');
-              closeMenu();
-            }}
-          >
-            Connexion
-          </button>
-        </nav>
       </div>
+    </div>
+  </header>
 
+  {/* Menu burger latéral pour mobile */}
+  <div className={`sidebar-menu ${menuOpen ? 'open' : ''}`}>
+    <div className="sidebar-header">
+      <img src={logo} alt="Jobty" className="sidebar-logo" />
+      <button 
+        className="close-btn"
+        onClick={closeMenu}
+        aria-label="Fermer"
+      >
+        <FiX />
+      </button>
+    </div>
+    
+    <nav className="sidebar-nav">
+      <a 
+        href="/decouverte" 
+        className="active" 
+        onClick={(e) => { e.preventDefault(); navigate('/decouverte'); closeMenu(); }}
+      >
+        Découverte
+      </a>
+      <a 
+        href="/marketplace" 
+        onClick={(e) => { e.preventDefault(); navigate('/marketplace'); closeMenu(); }}
+      >
+        Marketplace
+      </a>
+      <a 
+        href="/portfolio" 
+        onClick={(e) => { e.preventDefault(); navigate('/portfolio'); closeMenu(); }}
+      >
+        Portfolio
+      </a>
+      <a 
+        href="/localisation" 
+        onClick={(e) => { e.preventDefault(); navigate('/localisation'); closeMenu(); }}
+      >
+        Localisation
+      </a>
+      <a 
+        href="/job-alerte" 
+        onClick={(e) => { e.preventDefault(); navigate('/job-alerte'); closeMenu(); }}
+      >
+        Job Alert
+      </a>
+      <a 
+        href="/job-experience" 
+        onClick={(e) => { e.preventDefault(); navigate('/job-experience'); closeMenu(); }}
+      >
+        Job Expérience
+      </a>
+      <button 
+        className="sidebar-connexion-btn"
+        onClick={() => { navigate('/connexion'); closeMenu(); }}
+      >
+        Connexion
+      </button>
+    </nav>
+  </div>
+
+  {/* Overlay */}
+  {menuOpen && <div className="sidebar-overlay" onClick={closeMenu}></div>}
       {/* Overlay pour fermer le menu en cliquant à côté */}
       {menuOpen && (
         <div 
