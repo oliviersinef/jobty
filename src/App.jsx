@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/home';
-import Decouverte from './pages/Decouverte'; // ✅ Majuscule
+import Decouverte from './pages/decouverte'; // ✅ Majuscule
 import Connexion from './pages/connexion';
 import Marketplace from './pages/marketplace';
 import Portfolio from './pages/portfolio'; // ✅ Vérifiez aussi celui-ci
