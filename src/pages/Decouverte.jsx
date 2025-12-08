@@ -25,8 +25,11 @@ import {
   FiBriefcase,
   FiBell,
   FiStar,
-  FiUser
+  FiUser,
+  FiFacebook,
+  FiInstagram
 } from 'react-icons/fi';
+import { FaWhatsapp } from 'react-icons/fa';
 import { COLORS } from '../styles/colors';
 import logo from '../assets/logo.png';
 import './decouverte.css';
@@ -190,152 +193,145 @@ function Decouverte() {
 
   return (
     <div className="decouverte-container">
-  {/* Header / Navigation */}
-  <header className="navbar-decouverte">
-    <div className="header-content">
-      <div 
-        className="header-logo"
-        onClick={() => navigate('/')}
-      >
-        <img src={logo} alt="Jobty" />
-      </div>
+      {/* Header / Navigation */}
+      <header className="navbar-decouverte">
+        <div className="header-content">
+          <div 
+            className="header-logo"
+            onClick={() => navigate('/')}
+          >
+            <img src={logo} alt="Jobty" />
+          </div>
 
-      {/* Navigation Desktop */}
-      <nav className="header-nav desktop-nav">
-        <a 
-          href="/decouverte" 
-          className="nav-item active"
-          onClick={(e) => { e.preventDefault(); navigate('/decouverte'); }}
-        >
-          Découverte
-        </a>
-        <a 
-          href="/marketplace" 
-          className="nav-item"
-          onClick={(e) => { e.preventDefault(); navigate('/marketplace'); }}
-        >
-          Marketplace
-        </a>
-        <a 
-          href="/portfolio" 
-          className="nav-item"
-          onClick={(e) => { e.preventDefault(); navigate('/portfolio'); }}
-        >
-          Portfolio
-        </a>
-        <a 
-          href="/localisation" 
-          className="nav-item"
-          onClick={(e) => { e.preventDefault(); navigate('/localisation'); }}
-        >
-          Localisation
-        </a>
-        <a 
-          href="/job-alerte" 
-          className="nav-item"
-          onClick={(e) => { e.preventDefault(); navigate('/job-alerte'); }}
-        >
-          Job Alert
-        </a>
-        <a 
-          href="/job-experience" 
-          className="nav-item"
-          onClick={(e) => { e.preventDefault(); navigate('/job-experience'); }}
-        >
-          Job Expérience
-        </a>
-      </nav>
+          {/* Navigation Desktop */}
+          <nav className="header-nav desktop-nav">
+            <a 
+              href="/decouverte" 
+              className="nav-item active"
+              onClick={(e) => { e.preventDefault(); navigate('/decouverte'); }}
+            >
+              Découverte
+            </a>
+            <a 
+              href="/marketplace" 
+              className="nav-item"
+              onClick={(e) => { e.preventDefault(); navigate('/marketplace'); }}
+            >
+              Marketplace
+            </a>
+            <a 
+              href="/portfolio" 
+              className="nav-item"
+              onClick={(e) => { e.preventDefault(); navigate('/portfolio'); }}
+            >
+              Portfolio
+            </a>
+            <a 
+              href="/localisation" 
+              className="nav-item"
+              onClick={(e) => { e.preventDefault(); navigate('/localisation'); }}
+            >
+              Localisation
+            </a>
+            <a 
+              href="/job-alerte" 
+              className="nav-item"
+              onClick={(e) => { e.preventDefault(); navigate('/job-alerte'); }}
+            >
+              Job Alert
+            </a>
+            <a 
+              href="/job-experience" 
+              className="nav-item"
+              onClick={(e) => { e.preventDefault(); navigate('/job-experience'); }}
+            >
+              Job Expérience
+            </a>
+          </nav>
 
-      <div className="header-actions">
-        <div 
-          className="profile-icon"
-          onClick={() => navigate('/connexion')}
-        >
-          <FiUser />
-          <span className="notification-badge">0</span>
+          <div className="header-actions">
+            <div 
+              className="profile-icon"
+              onClick={() => navigate('/connexion')}
+            >
+              <FiUser />
+              <span className="notification-badge">0</span>
+            </div>
+
+            {/* Bouton burger mobile */}
+            <button 
+              className="burger-btn"
+              onClick={toggleMenu}
+              aria-label="Menu"
+            >
+              <FiMenu />
+            </button>
+          </div>
         </div>
+      </header>
 
-        {/* Bouton burger mobile */}
-        <button 
-          className="burger-btn"
-          onClick={toggleMenu}
-          aria-label="Menu"
-        >
-          <FiMenu />
-        </button>
+      {/* Menu burger latéral pour mobile */}
+      <div className={`sidebar-menu ${menuOpen ? 'open' : ''}`}>
+        <div className="sidebar-header">
+          <img src={logo} alt="Jobty" className="sidebar-logo" />
+          <button 
+            className="close-btn"
+            onClick={closeMenu}
+            aria-label="Fermer"
+          >
+            <FiX />
+          </button>
+        </div>
+        
+        <nav className="sidebar-nav">
+          <a 
+            href="/decouverte" 
+            className="active" 
+            onClick={(e) => { e.preventDefault(); navigate('/decouverte'); closeMenu(); }}
+          >
+            Découverte
+          </a>
+          <a 
+            href="/marketplace" 
+            onClick={(e) => { e.preventDefault(); navigate('/marketplace'); closeMenu(); }}
+          >
+            Marketplace
+          </a>
+          <a 
+            href="/portfolio" 
+            onClick={(e) => { e.preventDefault(); navigate('/portfolio'); closeMenu(); }}
+          >
+            Portfolio
+          </a>
+          <a 
+            href="/localisation" 
+            onClick={(e) => { e.preventDefault(); navigate('/localisation'); closeMenu(); }}
+          >
+            Localisation
+          </a>
+          <a 
+            href="/job-alerte" 
+            onClick={(e) => { e.preventDefault(); navigate('/job-alerte'); closeMenu(); }}
+          >
+            Job Alert
+          </a>
+          <a 
+            href="/job-experience" 
+            onClick={(e) => { e.preventDefault(); navigate('/job-experience'); closeMenu(); }}
+          >
+            Job Expérience
+          </a>
+          <button 
+            className="sidebar-connexion-btn"
+            onClick={() => { navigate('/connexion'); closeMenu(); }}
+          >
+            Connexion
+          </button>
+        </nav>
       </div>
-    </div>
-  </header>
 
-  {/* Menu burger latéral pour mobile */}
-  <div className={`sidebar-menu ${menuOpen ? 'open' : ''}`}>
-    <div className="sidebar-header">
-      <img src={logo} alt="Jobty" className="sidebar-logo" />
-      <button 
-        className="close-btn"
-        onClick={closeMenu}
-        aria-label="Fermer"
-      >
-        <FiX />
-      </button>
-    </div>
-    
-    <nav className="sidebar-nav">
-      <a 
-        href="/decouverte" 
-        className="active" 
-        onClick={(e) => { e.preventDefault(); navigate('/decouverte'); closeMenu(); }}
-      >
-        Découverte
-      </a>
-      <a 
-        href="/marketplace" 
-        onClick={(e) => { e.preventDefault(); navigate('/marketplace'); closeMenu(); }}
-      >
-        Marketplace
-      </a>
-      <a 
-        href="/portfolio" 
-        onClick={(e) => { e.preventDefault(); navigate('/portfolio'); closeMenu(); }}
-      >
-        Portfolio
-      </a>
-      <a 
-        href="/localisation" 
-        onClick={(e) => { e.preventDefault(); navigate('/localisation'); closeMenu(); }}
-      >
-        Localisation
-      </a>
-      <a 
-        href="/job-alerte" 
-        onClick={(e) => { e.preventDefault(); navigate('/job-alerte'); closeMenu(); }}
-      >
-        Job Alert
-      </a>
-      <a 
-        href="/job-experience" 
-        onClick={(e) => { e.preventDefault(); navigate('/job-experience'); closeMenu(); }}
-      >
-        Job Expérience
-      </a>
-      <button 
-        className="sidebar-connexion-btn"
-        onClick={() => { navigate('/connexion'); closeMenu(); }}
-      >
-        Connexion
-      </button>
-    </nav>
-  </div>
-
-  {/* Overlay */}
-  {menuOpen && <div className="sidebar-overlay" onClick={closeMenu}></div>}
-      {/* Overlay pour fermer le menu en cliquant à côté */}
-      {menuOpen && (
-        <div 
-          className="sidebar-overlay"
-          onClick={closeMenu}
-        ></div>
-      )}
+      {/* Overlay */}
+      {menuOpen && <div className="sidebar-overlay" onClick={closeMenu}></div>}
 
       {/* Contenu principal */}
       <main className="main-decouverte">
@@ -397,19 +393,17 @@ function Decouverte() {
           {/* Ligne décorative turquoise */}
           <div className="decorative-line" style={{ backgroundColor: COLORS.primary }}></div>
 
-          {/* Photos de profil chevauchées avec DiceBear */}
+          {/* Photos de profil chevauchées avec avatars locaux */}
           <div className="profiles-row">
-            {['Amina', 'Kofi', 'Fatou', 'Ahmed', 'Aisha', 'Kwame', 'Zara', 'Omar'].map((name, index) => (
+            {[1, 2, 3, 4, 5, 6, 7, 8].map((num, index) => (
               <div 
                 key={index} 
                 className="profile-avatar"
                 style={{ 
-                  backgroundImage: `url('https://api.dicebear.com/7.x/avataaars/svg?seed=${name}')`,
-                  backgroundSize: 'cover',
-                  backgroundPosition: 'center',
+                  backgroundImage: `url('/image/avatars/avatar${num}.jpg')`,
                   zIndex: 10 - index
                 }}
-                title={name}
+                title={`Avatar ${num}`}
               >
               </div>
             ))}
@@ -464,9 +458,107 @@ function Decouverte() {
         </div>
       </section>
 
-      {/* Footer */}
+      {/* NOUVEAU FOOTER */}
       <footer className="footer-decouverte">
-        <p>© 2024 Jobty - Connectons les talents d'Afrique</p>
+        <div className="footer-content">
+          {/* Colonne 1 - Navigation */}
+          <div className="footer-column">
+            <h4 className="footer-column-title">Navigation</h4>
+            <ul className="footer-links">
+              <li>
+                <a href="/decouverte" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); }}>
+                  Découvrir
+                </a>
+              </li>
+              <li>
+                <a href="/marketplace" onClick={(e) => { e.preventDefault(); navigate('/marketplace'); }}>
+                  Marketplace
+                </a>
+              </li>
+              <li>
+                <a href="/portfolio" onClick={(e) => { e.preventDefault(); navigate('/portfolio'); }}>
+                  Portfolio
+                </a>
+              </li>
+              <li>
+                <a href="/localisation" onClick={(e) => { e.preventDefault(); navigate('/localisation'); }}>
+                  Localisation
+                </a>
+              </li>
+              <li>
+                <a href="/job-alerte" onClick={(e) => { e.preventDefault(); navigate('/job-alerte'); }}>
+                  Job alerte
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Colonne 2 - À propos */}
+          <div className="footer-column">
+            <h4 className="footer-column-title">À propos</h4>
+            <ul className="footer-links">
+              <li>
+                <a href="/comment-ca-marche" onClick={(e) => { e.preventDefault(); navigate('/comment-ca-marche'); }}>
+                  Comment ça marche
+                </a>
+              </li>
+              <li>
+                <a href="/devenir-jobeur" onClick={(e) => { e.preventDefault(); navigate('/devenir-jobeur'); }}>
+                  Devenir Jobeur
+                </a>
+              </li>
+              <li>
+                <a href="/nous-joindre" onClick={(e) => { e.preventDefault(); navigate('/nous-joindre'); }}>
+                  Nous Joindre
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Colonne 3 - Légal */}
+          <div className="footer-column">
+            <h4 className="footer-column-title">Légal</h4>
+            <ul className="footer-links">
+              <li>
+                <a href="/blog" onClick={(e) => { e.preventDefault(); navigate('/blog'); }}>
+                  Blog
+                </a>
+              </li>
+              <li>
+                <a href="/conditions" onClick={(e) => { e.preventDefault(); navigate('/conditions'); }}>
+                  Conditions d'utilisation
+                </a>
+              </li>
+              <li>
+                <a href="/parametres" onClick={(e) => { e.preventDefault(); navigate('/parametres'); }}>
+                  Paramètres
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Ligne de séparation */}
+        <div className="footer-divider"></div>
+
+        {/* Bas du footer */}
+        <div className="footer-bottom">
+          {/* Réseaux sociaux */}
+          <div className="footer-social">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <FiFacebook />
+            </a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <FiInstagram />
+            </a>
+            <a href="https://wa.me/" target="_blank" rel="noopener noreferrer" className="social-icon">
+              <FaWhatsapp />
+            </a>
+          </div>
+
+          {/* Copyright */}
+          <p className="footer-copyright">© 2024 Jobty - Tous droits réservés</p>
+        </div>
       </footer>
     </div>
   );

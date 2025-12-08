@@ -1,4 +1,6 @@
-/* ========== CONTAINER PRINCIPAL ========== */
+/* ========================================================================== */
+/*                          CONTAINER PRINCIPAL                               */
+/* ========================================================================== */
 .decouverte-container {
   min-height: 100vh;
   background-color: #FFFFFF;
@@ -7,7 +9,11 @@
   position: relative;
 }
 
-/* ========== HEADER ========== */
+/* ========================================================================== */
+/*                                HEADER                                      */
+/* ========================================================================== */
+
+/* --- Navigation principale --- */
 .navbar-decouverte {
   background-color: #FFFFFF;
   border-bottom: 1px solid #f0f0f0;
@@ -26,6 +32,7 @@
   align-items: center;
 }
 
+/* --- Logo --- */
 .header-logo {
   cursor: pointer;
 }
@@ -35,6 +42,7 @@
   height: auto;
 }
 
+/* --- Menu de navigation --- */
 .header-nav {
   display: flex;
   gap: 30px;
@@ -70,6 +78,7 @@
   border-radius: 2px;
 }
 
+/* --- Actions du header (profil, notifications) --- */
 .header-actions {
   display: flex;
   align-items: center;
@@ -114,6 +123,7 @@
   justify-content: center;
 }
 
+/* --- Bouton burger (mobile) --- */
 .burger-btn {
   display: none;
   background: none;
@@ -123,7 +133,10 @@
   cursor: pointer;
 }
 
-/* ========== SIDEBAR MOBILE ========== */
+/* ========================================================================== */
+/*                          SIDEBAR MOBILE                                    */
+/* ========================================================================== */
+
 .sidebar-menu {
   position: fixed;
   top: 0;
@@ -142,6 +155,7 @@
   right: 0;
 }
 
+/* --- Header de la sidebar --- */
 .sidebar-header {
   display: flex;
   justify-content: space-between;
@@ -162,6 +176,7 @@
   cursor: pointer;
 }
 
+/* --- Navigation de la sidebar --- */
 .sidebar-nav {
   display: flex;
   flex-direction: column;
@@ -202,6 +217,7 @@
   background-color: #35b5b7;
 }
 
+/* --- Overlay de la sidebar --- */
 .sidebar-overlay {
   position: fixed;
   top: 0;
@@ -212,7 +228,10 @@
   z-index: 999;
 }
 
-/* ========== MAIN CONTENT ========== */
+/* ========================================================================== */
+/*                           CONTENU PRINCIPAL                                */
+/* ========================================================================== */
+
 .main-decouverte {
   flex: 1;
   padding: 60px 50px;
@@ -221,7 +240,10 @@
   width: 100%;
 }
 
-/* ========== HEADER DE LA PAGE ========== */
+/* ========================================================================== */
+/*                         HEADER DE LA PAGE                                  */
+/* ========================================================================== */
+
 .decouverte-header {
   text-align: center;
   margin-bottom: 60px;
@@ -241,7 +263,10 @@
   margin: 0 auto;
 }
 
-/* ========== GRILLE DES SECTEURS ========== */
+/* ========================================================================== */
+/*                        GRILLE DES SECTEURS                                 */
+/* ========================================================================== */
+
 .secteurs-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -249,6 +274,7 @@
   margin-bottom: 50px;
 }
 
+/* --- Carte d'un secteur --- */
 .secteur-card {
   background: #FFFFFF;
   border: 2px solid #f0f0f0;
@@ -261,6 +287,7 @@
   overflow: hidden;
 }
 
+/* Barre supérieure animée */
 .secteur-card::before {
   content: '';
   position: absolute;
@@ -283,6 +310,7 @@
   box-shadow: 0 8px 20px rgba(61, 199, 201, 0.15);
 }
 
+/* --- Icône du secteur --- */
 .secteur-icon-wrapper {
   width: 60px;
   height: 60px;
@@ -303,6 +331,7 @@
   stroke-width: 1.5;
 }
 
+/* --- Texte du secteur --- */
 .secteur-nom {
   font-size: 17px;
   font-weight: 600;
@@ -316,7 +345,10 @@
   line-height: 1.4;
 }
 
-/* ========== CALL TO ACTION ========== */
+/* ========================================================================== */
+/*                        CALL TO ACTION                                      */
+/* ========================================================================== */
+
 .decouverte-cta {
   text-align: center;
   padding: 40px 20px;
@@ -347,7 +379,10 @@
   box-shadow: 0 6px 20px rgba(61, 199, 201, 0.4);
 }
 
-/* ========== SECTION TÉMOIGNAGES ========== */
+/* ========================================================================== */
+/*                    SECTION TÉMOIGNAGES - AVATARS                           */
+/* ========================================================================== */
+
 .temoignages-section {
   background-color: #f5f5f5;
   padding: 80px 20px;
@@ -363,46 +398,61 @@
   gap: 30px;
 }
 
+/* --- Ligne décorative --- */
 .decorative-line {
   width: 100px;
   height: 3px;
   border-radius: 2px;
 }
 
+/* --- RANGÉE D'AVATARS CHEVAUCHÉS --- */
 .profiles-row {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 10px 0;
+  margin: 20px 0;
+  padding: 10px;
 }
 
+/* --- AVATAR INDIVIDUEL --- */
 .profile-avatar {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
-  border: 3px solid #f5f5f5;
-  margin-left: -12px;
-  transition: transform 0.3s ease;
+  border: 3px solid white;
+  margin-left: -18px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
   position: relative;
+  box-shadow: 0 0px 0px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-position: center;
+  background-color: #f0f0f0;
 }
 
+/* Premier avatar sans chevauchement */
 .profile-avatar:first-child {
   margin-left: 0;
 }
 
+/* Effet au survol */
 .profile-avatar:hover {
-  transform: scale(1.15);
-  z-index: 20 !important;
+  transform: translateY(-8px) scale(1.15);
+  box-shadow: 0 6px 16px rgba(44, 192, 195, 0.3);
+  z-index: 100 !important;
 }
 
+/* --- Notation étoiles --- */
 .stars-rating {
   display: flex;
   gap: 6px;
   align-items: center;
+  justify-content: center;
+  margin: 10px 0;
 }
 
 .star {
-  font-size: 22px;
+  font-size: 28px;
   color: #FFD700;
   fill: #FFD700;
   stroke: #FFD700;
@@ -416,32 +466,104 @@
   fill: url(#half);
 }
 
+/* --- Texte du témoignage --- */
 .temoignage-text {
-  font-size: 18px;
+  font-size: 20px;
   color: #666;
   font-weight: 500;
   line-height: 1.6;
-  max-width: 600px;
+  max-width: 700px;
+  margin: 10px 0;
 }
 
+/* --- Bouton "Devenir Jobeur" --- */
 .jobeur-button {
   padding: 16px 40px;
   border: none;
   border-radius: 50px;
+  background-color: #2cc0c3;
   color: white;
   font-size: 16px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 10px;
+  margin-top: 20px;
 }
 
 .jobeur-button:hover {
+  background-color: #24a8ab;
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(44, 192, 195, 0.4);
 }
 
-/* ========== SECTION SERVICES ========== */
+/* ========================================================================== */
+/*                    RESPONSIVE - AVATARS TABLETTE                           */
+/* ========================================================================== */
+
+@media (max-width: 768px) {
+  .temoignages-section {
+    padding: 60px 20px;
+  }
+
+  .profile-avatar {
+    width: 50px;
+    height: 50px;
+    margin-left: -15px;
+    border-width: 2px;
+  }
+
+  .star {
+    font-size: 24px;
+  }
+
+  .temoignage-text {
+    font-size: 18px;
+  }
+
+  .jobeur-button {
+    width: 100%;
+    max-width: 350px;
+  }
+}
+
+/* ========================================================================== */
+/*                    RESPONSIVE - AVATARS MOBILE                             */
+/* ========================================================================== */
+
+@media (max-width: 480px) {
+  .temoignages-section {
+    padding: 50px 15px;
+  }
+
+  .profile-avatar {
+    width: 45px;
+    height: 45px;
+    margin-left: -12px;
+    border-width: 2px;
+  }
+
+  .profiles-row {
+    margin: 15px 0;
+  }
+
+  .star {
+    font-size: 22px;
+  }
+
+  .temoignage-text {
+    font-size: 16px;
+  }
+
+  .jobeur-button {
+    padding: 14px 30px;
+    font-size: 15px;
+  }
+}
+
+/* ========================================================================== */
+/*                        SECTION SERVICES                                    */
+/* ========================================================================== */
+
 .services-section {
   background: linear-gradient(135deg, #7B68AB 0%, #6852A3 100%);
   padding: 80px 20px;
@@ -452,12 +574,14 @@
   margin: 0 auto;
 }
 
+/* --- Grille des services --- */
 .services-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
+/* --- Carte de service --- */
 .service-card {
   text-align: center;
   padding: 30px 20px;
@@ -468,6 +592,7 @@
   transform: translateY(-8px);
 }
 
+/* --- Icône du service --- */
 .service-icon-circle {
   width: 80px;
   height: 80px;
@@ -489,6 +614,7 @@
   stroke-width: 1.5;
 }
 
+/* --- Texte du service --- */
 .service-title {
   font-size: 17px;
   font-weight: 600;
@@ -504,17 +630,338 @@
   opacity: 0.95;
 }
 
-/* ========== FOOTER ========== */
+/* ========================================================================== */
+/*                              FOOTER                                        */
+/* ========================================================================== */
+
 .footer-decouverte {
-  text-align: center;
-  padding: 20px;
-  color: #888;
-  font-size: 14px;
-  border-top: 1px solid #f0f0f0;
-  background-color: #FFFFFF;
+  background-color: #2a2a2a;
+  color: #b0b0b0;
+  padding: 60px 20px 20px;
 }
 
-/* ========== ANIMATIONS ========== */
+/* --- Contenu principal du footer --- */
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+/* --- Colonnes du footer --- */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-column-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* --- Liens du footer --- */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links li a {
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links li a:hover {
+  color: #2cc0c3;
+}
+
+/* --- Ligne de séparation --- */
+.footer-divider {
+  max-width: 1400px;
+  margin: 0 auto 30px;
+  height: 1px;
+  background-color: #404040;
+}
+
+/* --- Bas du footer --- */
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Réseaux sociaux --- */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3a3a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b0b0b0;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #2cc0c3;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* --- Copyright --- */
+.footer-copyright {
+  font-size: 13px;
+  color: #808080;
+  margin: 0;
+}
+
+/* ========================================================================== */
+/*                     RESPONSIVE FOOTER - TABLETTE                           */
+/* ========================================================================== */
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .footer-column:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-social {
+    order: -1;
+  }
+}
+
+/* ========================================================================== */
+/*                     RESPONSIVE FOOTER - MOBILE                             */
+/* ========================================================================== */
+
+@media (max-width: 480px) {
+  .footer-decouverte {
+    padding: 40px 20px 20px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-column:last-child {
+    grid-column: auto;
+  }
+
+  .footer-column-title {
+    font-size: 15px;
+  }
+
+  .footer-links li a {
+    font-size: 13px;
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+  }
+}
+
+/* --- Contenu principal du footer --- */
+.footer-content {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  margin-bottom: 40px;
+}
+
+/* --- Colonnes du footer --- */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-column-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* --- Liens du footer --- */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.footer-links li a {
+  color: #b0b0b0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+  display: inline-block;
+}
+
+.footer-links li a:hover {
+  color: #2cc0c3;
+}
+
+/* --- Ligne de séparation --- */
+.footer-divider {
+  max-width: 1400px;
+  margin: 0 auto 30px;
+  height: 1px;
+  background-color: #404040;
+}
+
+/* --- Bas du footer --- */
+.footer-bottom {
+  max-width: 1400px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* --- Réseaux sociaux --- */
+.footer-social {
+  display: flex;
+  gap: 15px;
+}
+
+.social-icon {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3a3a3a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #b0b0b0;
+  font-size: 18px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+  background-color: #2cc0c3;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* --- Copyright --- */
+.footer-copyright {
+  font-size: 13px;
+  color: #808080;
+  margin: 0;
+}
+
+/* ========================================================================== */
+/*                     RESPONSIVE FOOTER - TABLETTE                           */
+/* ========================================================================== */
+
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .footer-column:last-child {
+    grid-column: 1 / -1;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 20px;
+    text-align: center;
+  }
+
+  .footer-social {
+    order: -1;
+  }
+}
+
+/* ========================================================================== */
+/*                     RESPONSIVE FOOTER - MOBILE                             */
+/* ========================================================================== */
+
+@media (max-width: 480px) {
+  .footer-decouverte {
+    padding: 40px 20px 20px;
+  }
+
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .footer-column:last-child {
+    grid-column: auto;
+  }
+
+  .footer-column-title {
+    font-size: 15px;
+  }
+
+  .footer-links li a {
+    font-size: 13px;
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
+    font-size: 16px;
+  }
+
+  .footer-copyright {
+    font-size: 12px;
+  }
+}
+
+/* ========================================================================== */
+/*                            ANIMATIONS                                      */
+/* ========================================================================== */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -526,6 +973,7 @@
   }
 }
 
+/* Animation d'apparition */
 .decouverte-header {
   animation: fadeInUp 0.6s ease-out;
 }
@@ -534,6 +982,7 @@
   animation: fadeInUp 0.8s ease-out;
 }
 
+/* Délais d'animation progressifs */
 .secteur-card:nth-child(1) {
   animation-delay: 0.1s;
 }
@@ -558,7 +1007,10 @@
   animation-delay: 0.35s;
 }
 
-/* ========== RESPONSIVE ========== */
+/* ========================================================================== */
+/*                     RESPONSIVE - DESKTOP LARGE                             */
+/* ========================================================================== */
+
 @media (max-width: 1200px) {
   .header-nav {
     gap: 20px;
@@ -569,7 +1021,12 @@
   }
 }
 
+/* ========================================================================== */
+/*                     RESPONSIVE - TABLETTE                                  */
+/* ========================================================================== */
+
 @media (max-width: 1024px) {
+  /* Header */
   .header-content {
     padding: 15px 30px;
   }
@@ -582,6 +1039,7 @@
     font-size: 13px;
   }
 
+  /* Secteurs */
   .secteurs-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 18px;
@@ -591,13 +1049,19 @@
     padding: 40px 30px;
   }
 
+  /* Services */
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 35px;
   }
 }
 
+/* ========================================================================== */
+/*                     RESPONSIVE - MOBILE LARGE                              */
+/* ========================================================================== */
+
 @media (max-width: 768px) {
+  /* Navigation mobile */
   .desktop-nav {
     display: none;
   }
@@ -606,6 +1070,7 @@
     display: block;
   }
 
+  /* Header */
   .header-content {
     padding: 15px 20px;
   }
@@ -614,6 +1079,7 @@
     max-width: 100px;
   }
 
+  /* Contenu principal */
   .main-decouverte {
     padding: 30px 20px;
   }
@@ -626,6 +1092,7 @@
     font-size: 16px;
   }
 
+  /* Secteurs */
   .secteurs-grid {
     grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
     gap: 14px;
@@ -653,6 +1120,7 @@
     font-size: 12px;
   }
 
+  /* Témoignages - Avatars */
   .temoignages-section {
     padding: 60px 20px;
   }
@@ -660,7 +1128,8 @@
   .profile-avatar {
     width: 45px;
     height: 45px;
-    margin-left: -10px;
+    margin-left: -12px;
+    border-width: 2px;
   }
 
   .star {
@@ -676,6 +1145,7 @@
     max-width: 350px;
   }
 
+  /* Services */
   .services-section {
     padding: 60px 20px;
   }
@@ -707,12 +1177,18 @@
   }
 }
 
+/* ========================================================================== */
+/*                     RESPONSIVE - MOBILE PETIT                              */
+/* ========================================================================== */
+
 @media (max-width: 480px) {
+  /* Sidebar */
   .sidebar-menu {
     width: 100%;
     right: -100%;
   }
 
+  /* Titres */
   .decouverte-title {
     font-size: 24px;
   }
@@ -721,6 +1197,7 @@
     font-size: 15px;
   }
 
+  /* Secteurs */
   .secteurs-grid {
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
@@ -749,6 +1226,7 @@
     font-size: 11px;
   }
 
+  /* CTA */
   .cta-text {
     font-size: 16px;
   }
@@ -758,6 +1236,7 @@
     padding: 14px 30px;
   }
 
+  /* Témoignages - Avatars */
   .temoignages-section {
     padding: 50px 15px;
   }
@@ -765,7 +1244,12 @@
   .profile-avatar {
     width: 40px;
     height: 40px;
-    margin-left: -8px;
+    margin-left: -10px;
+    border-width: 2px;
+  }
+
+  .profiles-row {
+    margin: 15px 0;
   }
 
   .star {
@@ -781,6 +1265,7 @@
     font-size: 15px;
   }
 
+  /* Services */
   .services-section {
     padding: 50px 15px;
   }
@@ -807,7 +1292,10 @@
   }
 }
 
-/* ========== ACCESSIBILITÉ ========== */
+/* ========================================================================== */
+/*                          ACCESSIBILITÉ                                     */
+/* ========================================================================== */
+
 .secteur-card:focus {
   outline: 3px solid #3DC7C9;
   outline-offset: 2px;
