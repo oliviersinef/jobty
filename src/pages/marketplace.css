@@ -791,53 +791,81 @@
   color: white;
 }
 
-/* ========== FOOTER ========== */
+/* ========================================================================== */
+/*                              FOOTER                                        */
+/* ========================================================================== */
+
 .marketplace-footer {
-  background-color: #1A1A1A;
-  padding: 60px 20px 30px;
+  background-color: #2a2a2a;
+  color: #b0b0b0;
+  padding: 60px 20px 20px;
 }
 
+/* --- Contenu principal du footer --- */
 .footer-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
-}
-
-.footer-columns {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 60px;
   margin-bottom: 40px;
 }
 
-.footer-column ul {
+/* --- Colonnes du footer --- */
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-column-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+}
+
+/* --- Liens du footer --- */
+.footer-links {
   list-style: none;
   padding: 0;
   margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
 }
 
-.footer-column li {
-  margin-bottom: 12px;
-}
-
-.footer-column a {
-  color: #ccc;
+.footer-links li a {
+  color: #b0b0b0;
   text-decoration: none;
   font-size: 14px;
   transition: color 0.3s ease;
+  display: inline-block;
 }
 
-.footer-column a:hover {
-  color: #3DC7C9;
+.footer-links li a:hover {
+  color: #2cc0c3;
 }
 
+/* --- Ligne de séparation --- */
+.footer-divider {
+  max-width: 1400px;
+  margin: 0 auto 30px;
+  height: 1px;
+  background-color: #404040;
+}
+
+/* --- Bas du footer --- */
 .footer-bottom {
-  border-top: 1px solid #333;
-  padding-top: 30px;
+  max-width: 1400px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
+/* --- Réseaux sociaux --- */
 .footer-social {
   display: flex;
   gap: 15px;
@@ -847,117 +875,41 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.1);
+  background-color: #3a3a3a;
   display: flex;
   align-items: center;
   justify-content: center;
+  color: #b0b0b0;
   font-size: 18px;
   text-decoration: none;
   transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-  background-color: #3DC7C9;
-  color: white !important;
+  background-color: #2cc0c3;
+  color: white;
+  transform: translateY(-3px);
 }
 
+/* --- Copyright --- */
 .footer-copyright {
-  color: #666;
   font-size: 13px;
+  color: #808080;
+  margin: 0;
 }
 
-/* ========== RESPONSIVE ========== */
-@media (max-width: 1200px) {
-  .freelance-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-@media (max-width: 1024px) {
-  .header-content {
-    padding: 15px 30px;
-  }
-
-  .header-nav {
-    gap: 25px;
-  }
-
-  .freelance-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .entreprise-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .job-experience-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+/* ========================================================================== */
+/*                     RESPONSIVE FOOTER - TABLETTE                           */
+/* ========================================================================== */
 
 @media (max-width: 768px) {
-  .desktop-nav {
-    display: none;
-  }
-
-  .burger-btn {
-    display: block;
-  }
-
-  .header-content {
-    padding: 15px 20px;
-  }
-
-  .hero-title {
-    font-size: 28px;
-  }
-
-  .hero-subtitle {
-    font-size: 16px;
-  }
-
-  .filters-bar {
-    flex-direction: column;
-  }
-
-  .filter-item {
-    min-width: 100%;
-  }
-
-  .filter-btn {
-    width: 100%;
-  }
-
-  .section-header {
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 5px;
-    padding: 0 20px;
-  }
-
-  .section-title {
-    font-size: 24px;
-  }
-
-  .freelance-grid,
-  .entreprise-grid {
+  .footer-content {
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
-    padding: 0 10px;
+    gap: 40px;
   }
 
-  .job-experience-grid {
-    grid-template-columns: 1fr;
-    padding: 0 10px;
-  }
-
-  .job-card {
-    flex-direction: column;
-  }
-
-  .footer-columns {
-    grid-template-columns: 1fr;
-    gap: 30px;
+  .footer-column:last-child {
+    grid-column: 1 / -1;
   }
 
   .footer-bottom {
@@ -965,33 +917,46 @@
     gap: 20px;
     text-align: center;
   }
+
+  .footer-social {
+    order: -1;
+  }
 }
 
+/* ========================================================================== */
+/*                     RESPONSIVE FOOTER - MOBILE                             */
+/* ========================================================================== */
+
 @media (max-width: 480px) {
-  .hero-title {
-    font-size: 24px;
+  .marketplace-footer {
+    padding: 40px 20px 20px;
   }
 
-  .freelance-grid,
-  .entreprise-grid {
+  .footer-content {
     grid-template-columns: 1fr;
+    gap: 30px;
   }
 
-  .freelance-card .card-header {
-    padding: 25px 15px;
+  .footer-column:last-child {
+    grid-column: auto;
   }
 
-  .profile-photo {
-    width: 80px;
-    height: 80px;
+  .footer-column-title {
+    font-size: 15px;
   }
 
-  .card-name {
+  .footer-links li a {
+    font-size: 13px;
+  }
+
+  .social-icon {
+    width: 36px;
+    height: 36px;
     font-size: 16px;
   }
 
-  .entreprise-image {
-    height: 140px;
+  .footer-copyright {
+    font-size: 12px;
   }
 }
 

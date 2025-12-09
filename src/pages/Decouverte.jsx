@@ -400,7 +400,7 @@ function Decouverte() {
                 key={index} 
                 className="profile-avatar"
                 style={{ 
-                  backgroundImage: `url('/image/avatars/avatar${num}.jpg')`,
+                  backgroundImage: `url('/images/avatars/avatar${num}.jpg')`,
                   zIndex: 10 - index
                 }}
                 title={`Avatar ${num}`}
@@ -490,6 +490,11 @@ function Decouverte() {
                   Job alerte
                 </a>
               </li>
+               <li>
+                <a href="/job-experience" onClick={(e) => { e.preventDefault(); navigate('/job-experience'); }}>
+                  Job expérience
+                </a>
+              </li>
             </ul>
           </div>
 
@@ -557,7 +562,7 @@ function Decouverte() {
           </div>
 
           {/* Copyright */}
-          <p className="footer-copyright">© 2024 Jobty - Tous droits réservés</p>
+          <p className="footer-copyright">© 2025 Jobty - Tous droits réservés</p>
         </div>
       </footer>
     </div>

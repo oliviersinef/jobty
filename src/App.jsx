@@ -5,6 +5,7 @@ import Decouverte from './pages/Decouverte';  // D majuscule
 import Connexion from './pages/Connexion';    // C majuscule
 import Marketplace from './pages/Marketplace'; // M majuscule
 import Portfolio from './pages/Portfolio';     // P majuscule
+import Localisation from './pages/Localisation'; // L majuscule
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
         <Route path="/connexion" element={<Connexion />} />
         <Route path="/marketplace" element={<Marketplace />} />
         <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/localisation" element={<Localisation />} />
       </Routes>
     </Router>
   );
