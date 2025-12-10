@@ -1,11 +1,11 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';           // H majuscule
-import Decouverte from './pages/Decouverte';  // D majuscule
-import Connexion from './pages/Connexion';    // C majuscule
-import Marketplace from './pages/Marketplace'; // M majuscule
-import Portfolio from './pages/Portfolio';     // P majuscule
-import Localisation from './pages/Localisation'; // L majuscule
+import Home from './pages/home';
+import Decouverte from './pages/decouverte';
+import Connexion from './pages/connexion';
+import Marketplace from './pages/marketplace';
+import Portfolio from './pages/portfolio';
+import Localisation from './pages/localisation';  // ← minuscule
 import './App.css';
 
 function App() {

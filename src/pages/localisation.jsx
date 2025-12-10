@@ -317,8 +317,7 @@ function Localisation() {
       {/* SECTION HERO */}
       <section className="localisation-hero">
         <h1 className="hero-title">
-          Trouvez les lieux utiles<br />
-          <span className="highlight">près de vous</span>
+          Trouvez les lieux utiles
         </h1>
         <p className="hero-subtitle">
           Pharmacies, hôpitaux, restaurants, garages et plus encore à portée de main
