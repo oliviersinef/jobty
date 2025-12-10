@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Decouverte from './pages/Decouverte';
-import Connexion from './pages/Connexion';
-import Marketplace from './pages/Marketplace';
-import Portfolio from './pages/Portfolio';
-import Localisation from './pages/Localisation';
-import JobAlerte from './pages/JobAlerte';
+import Decouverte from './pages/decouverte';
+import Connexion from './pages/connexion';
+import Marketplace from './pages/marketplace';
+import Portfolio from './pages/portfolio';
+import Localisation from './pages/localisation';
+import JobAlerte from './pages/jobAlerte';
 import './App.css';
 
 function App() {
