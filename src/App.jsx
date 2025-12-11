@@ -7,6 +7,7 @@ import Marketplace from './pages/marketplace';
 import Portfolio from './pages/portfolio';
 import Localisation from './pages/localisation';
 import JobAlerte from './pages/jobAlerte';
+import JobExperience from './pages/jobExperience';
 import './App.css';
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
         <Route path="/portfolio" element={<Portfolio />} />
         <Route path="/localisation" element={<Localisation />} />
         <Route path="/job-alerte" element={<JobAlerte />} />
+         <Route path="/job-experience" element={<JobExperience />} />
       </Routes>
     </Router>
   );

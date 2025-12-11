@@ -703,9 +703,13 @@ function Marketplace() {
           ))}
         </div>
 
-        <button className="voir-plus-btn light">
-          Voir plus de profils
-        </button>
+        <button 
+  className="voir-plus-btn light" 
+  style={{ borderColor: 'white', color: 'white' }}
+  onClick={() => navigate('/job-experience')}
+>
+  Voir plus de profils
+</button>
       </section>
 
       {/* FOOTER */}
