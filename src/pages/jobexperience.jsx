@@ -390,7 +390,7 @@ function JobExperience() {
           </div>
 
           <nav className="jobexp-nav desktop-only">
-            <a href="/decouverte" className="jobexp-nav-item" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); }}>Découvrir</a>
+            <a href="/decouverte" className="jobexp-nav-item" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); }}>Découverte</a>
             <a href="/marketplace" className="jobexp-nav-item" onClick={(e) => { e.preventDefault(); navigate('/marketplace'); }}>Marketplace</a>
             <a href="/portfolio" className="jobexp-nav-item" onClick={(e) => { e.preventDefault(); navigate('/portfolio'); }}>Portfolio</a>
             <a href="/localisation" className="jobexp-nav-item" onClick={(e) => { e.preventDefault(); navigate('/localisation'); }}>Localisation</a>
@@ -419,7 +419,7 @@ function JobExperience() {
           </button>
         </div>
         <nav className="jobexp-sidebar-nav">
-          <a href="/decouverte" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); closeMenu(); }}>Découvrir</a>
+          <a href="/decouverte" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); closeMenu(); }}>Découverte</a>
           <a href="/marketplace" onClick={(e) => { e.preventDefault(); navigate('/marketplace'); closeMenu(); }}>Marketplace</a>
           <a href="/portfolio" onClick={(e) => { e.preventDefault(); navigate('/portfolio'); closeMenu(); }}>Portfolio</a>
           <a href="/localisation" onClick={(e) => { e.preventDefault(); navigate('/localisation'); closeMenu(); }}>Localisation</a>

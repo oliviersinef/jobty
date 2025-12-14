@@ -238,7 +238,7 @@ function JobAlerte() {
           </div>
 
           <nav className="header-nav desktop-nav">
-            <a href="/decouverte" className="nav-item" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); }}>Découvrir</a>
+            <a href="/decouverte" className="nav-item" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); }}>Découverte</a>
             <a href="/marketplace" className="nav-item" onClick={(e) => { e.preventDefault(); navigate('/marketplace'); }}>Marketplace</a>
             <a href="/portfolio" className="nav-item" onClick={(e) => { e.preventDefault(); navigate('/portfolio'); }}>Portfolio</a>
             <a href="/localisation" className="nav-item" onClick={(e) => { e.preventDefault(); navigate('/localisation'); }}>Localisation</a>
@@ -267,7 +267,7 @@ function JobAlerte() {
           </button>
         </div>
         <nav className="sidebar-nav">
-          <a href="/decouverte" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); closeMenu(); }}>Découvrir</a>
+          <a href="/decouverte" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); closeMenu(); }}>Découverte</a>
           <a href="/marketplace" onClick={(e) => { e.preventDefault(); navigate('/marketplace'); closeMenu(); }}>Marketplace</a>
           <a href="/portfolio" onClick={(e) => { e.preventDefault(); navigate('/portfolio'); closeMenu(); }}>Portfolio</a>
           <a href="/localisation" onClick={(e) => { e.preventDefault(); navigate('/localisation'); closeMenu(); }}>Localisation</a>

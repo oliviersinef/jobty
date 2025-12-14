@@ -212,7 +212,7 @@ function Localisation() {
               className="nav-item"
               onClick={(e) => { e.preventDefault(); navigate('/decouverte'); }}
             >
-              Découvrir
+              Découverte
             </a>
             <a 
               href="/marketplace" 
@@ -285,7 +285,7 @@ function Localisation() {
         </div>
         <nav className="sidebar-nav">
           <a href="/decouverte" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); closeMenu(); }}>
-            Découvrir
+            Découverte
           </a>
           <a href="/marketplace" onClick={(e) => { e.preventDefault(); navigate('/marketplace'); closeMenu(); }}>
             Marketplace

@@ -306,6 +306,7 @@ function Marketplace() {
 
   return (
     <div className="marketplace-container">
+      
       {/* HEADER / NAVIGATION */}
       <header className="marketplace-header">
         <div className="header-content">
@@ -323,7 +324,7 @@ function Marketplace() {
               className="nav-item"
               onClick={(e) => { e.preventDefault(); navigate('/decouverte'); }}
             >
-              Découvrir
+              Découverte
             </a>
             <a 
               href="/marketplace" 
@@ -399,7 +400,7 @@ function Marketplace() {
         </div>
         <nav className="sidebar-nav">
           <a href="/decouverte" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); closeMenu(); }}>
-            Découvrir
+            Découverte
           </a>
           <a href="/marketplace" className="active" onClick={(e) => { e.preventDefault(); navigate('/marketplace'); closeMenu(); }}>
             Marketplace
