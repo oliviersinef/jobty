@@ -21,7 +21,7 @@ import {
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaGraduationCap } from 'react-icons/fa';
 import { COLORS } from '../styles/colors';
 import logo from '../assets/logo.png';
-import './jobexperience.css';
+import './jobExperience.css';
 
 function JobExperience() {
   const navigate = useNavigate();

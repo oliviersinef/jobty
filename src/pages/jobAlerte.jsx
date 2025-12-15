@@ -37,7 +37,7 @@ import {
 } from 'react-icons/fa';
 import { COLORS } from '../styles/colors';
 import logo from '../assets/logo.png';
-import './jobalerte.css';
+import './jobAlerte.css';
 
 function JobAlerte() {
   const navigate = useNavigate();
