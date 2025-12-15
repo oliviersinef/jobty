@@ -7,7 +7,7 @@ import Marketplace from './pages/Marketplace.jsx'; // ✅ M majuscule
 import Portfolio from './pages/Portfolio.jsx';     // ✅ P majuscule
 import Localisation from './pages/Localisation.jsx'; // ✅ L majuscule
 import JobAlerte from './pages/JobAlerte.jsx';     // ✅ J et A majuscules
-import JobExperience from './pages/JobExperience.jsx'; // ✅ J et E majuscules
+import JobExperience from './pages/jobExperience.jsx'; // ✅ J et E majuscules
 import './App.css';
 
 function App() {
