@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Decouverte from './pages/decouverte.jsx';
-import Connexion from './pages/connexion.jsx';
-import Marketplace from './pages/marketplace.jsx';
-import Portfolio from './pages/portfolio.jsx';
-import Localisation from './pages/localisation.jsx';
-import JobAlerte from './pages/jobAlerte.jsx';
-import JobExperience from './pages/jobExperience.jsx';
+import Home from './pages/Home.jsx';
+import Decouverte from './pages/Decouverte.jsx';  // ✅ D majuscule
+import Connexion from './pages/Connexion.jsx';    // ✅ C majuscule
+import Marketplace from './pages/Marketplace.jsx'; // ✅ M majuscule
+import Portfolio from './pages/Portfolio.jsx';     // ✅ P majuscule
+import Localisation from './pages/Localisation.jsx'; // ✅ L majuscule
+import JobAlerte from './pages/JobAlerte.jsx';     // ✅ J et A majuscules
+import JobExperience from './pages/JobExperience.jsx'; // ✅ J et E majuscules
 import './App.css';
 
 function App() {
