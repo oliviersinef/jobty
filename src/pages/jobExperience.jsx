@@ -390,7 +390,7 @@ function JobExperience() {
           </div>
 
           <nav className="jobexp-nav desktop-only">
-            <a href="/decouverte" className="jobexp-nav-item" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); }}>Découverte</a>
+            <a href="/decouverte" className="jobexp-nav-item" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); }}>Découvrir</a>
             <a href="/marketplace" className="jobexp-nav-item" onClick={(e) => { e.preventDefault(); navigate('/marketplace'); }}>Marketplace</a>
             <a href="/portfolio" className="jobexp-nav-item" onClick={(e) => { e.preventDefault(); navigate('/portfolio'); }}>Portfolio</a>
             <a href="/localisation" className="jobexp-nav-item" onClick={(e) => { e.preventDefault(); navigate('/localisation'); }}>Localisation</a>
@@ -419,7 +419,7 @@ function JobExperience() {
           </button>
         </div>
         <nav className="jobexp-sidebar-nav">
-          <a href="/decouverte" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); closeMenu(); }}>Découverte</a>
+          <a href="/decouverte" onClick={(e) => { e.preventDefault(); navigate('/decouverte'); closeMenu(); }}>Découvrir</a>
           <a href="/marketplace" onClick={(e) => { e.preventDefault(); navigate('/marketplace'); closeMenu(); }}>Marketplace</a>
           <a href="/portfolio" onClick={(e) => { e.preventDefault(); navigate('/portfolio'); closeMenu(); }}>Portfolio</a>
           <a href="/localisation" onClick={(e) => { e.preventDefault(); navigate('/localisation'); closeMenu(); }}>Localisation</a>
@@ -545,7 +545,6 @@ function JobExperience() {
       {/* CONTENU PRINCIPAL */}
       <main className="jobexp-main">
         
-
 {/* ONGLET PROFILS */}
 {activeTab === 'profils' && (
   <div className="jobexp-profils-section">
@@ -626,19 +625,20 @@ function JobExperience() {
       ))}
     </div>
 
-    {filteredProfils.length === 0 && (
-      <div className="jobexp-no-results">
-        <FiUsers className="jobexp-no-results-icon" />
-        <h3>Aucun profil trouvé</h3>
-        <p>Essayez de modifier vos critères de recherche</p>
-      </div>
-    )}
+      {filteredProfils.length === 0 && (
+              <div className="jobexp-no-results">
+                <FiUsers className="jobexp-no-results-icon" />
+                <h3>Aucun profil trouvé</h3>
+                <p>Essayez de modifier vos critères de recherche</p>
+              </div>
+            )}
 
-    <button className="jobexp-voir-plus-btn" style={{ borderColor: COLORS.primary, color: COLORS.primary }}>
-      Voir plus de profils
-    </button>
-  </div>
-)}
+            <button className="jobexp-voir-plus-btn" style={{ borderColor: COLORS.primary, color: COLORS.primary }}>
+              Voir plus de profils
+            </button>
+          </div>
+        )}
+        
         {/* ONGLET OFFRES */}
         {activeTab === 'offres' && (
           <div className="jobexp-offres-section">
