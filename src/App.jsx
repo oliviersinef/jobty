@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import Decouverte from './pages/Decouverte';
-import Connexion from './pages/connexion';
-import Marketplace from './pages/marketplace';
-import Portfolio from './pages/portfolio';
-import Localisation from './pages/localisation';
-import JobAlerte from './pages/jobAlerte';
-import JobExperience from './pages/jobExperience';
+import Decouverte from './pages/decouverte.jsx';
+import Connexion from './pages/connexion.jsx';
+import Marketplace from './pages/marketplace.jsx';
+import Portfolio from './pages/portfolio.jsx';
+import Localisation from './pages/localisation.jsx';
+import JobAlerte from './pages/jobAlerte.jsx';
+import JobExperience from './pages/jobExperience.jsx';
 import './App.css';
 
 function App() {
