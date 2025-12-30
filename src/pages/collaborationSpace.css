@@ -143,7 +143,7 @@
 
 .collab-progress-step.current .collab-progress-icon {
   animation: pulse 2s infinite;
-  border-color: #3fcfd1;
+  border-color: #775ebb;
 }
 
 @keyframes pulse {
@@ -413,6 +413,7 @@
 }
 
 .collab-step-icon {
+  color: #3dc7c9;
   width: 60px;
   height: 60px;
   min-width: 60px;
@@ -1121,13 +1122,13 @@
 }
 
 .collab-contrat-logo {
-  width: 50px;
-  height: 50px;
+  width: 120px;
+  height: 40px;
 }
 
 .collab-contrat-header h3 {
   font-size: 18px;
-  color: #2c3e50;
+  color: #2c5050;
   margin: 0 0 5px 0;
 }
 
@@ -1156,6 +1157,7 @@
   padding: 20px;
   background: #f8f9fa;
   border-radius: 15px;
+  line-height: 1.15;
 }
 
 .collab-contrat-partie h4 {
@@ -1175,7 +1177,7 @@
 
 .collab-contrat-partie span {
   font-size: 13px;
-  color: #667eea;
+  color: #3dc7c9;
 }
 
 .collab-contrat-vs {
@@ -1198,7 +1200,7 @@
 }
 
 .collab-contrat-section h4 svg {
-  color: #667eea;
+  color: #6852a3;
 }
 
 .collab-contrat-section p {
@@ -1225,7 +1227,7 @@
   content: '•';
   position: absolute;
   left: 10px;
-  color: #667eea;
+  color: #6852a3;
   font-weight: 700;
 }
 
@@ -1293,7 +1295,7 @@
 
 .collab-sign-btn {
   padding: 10px 25px;
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background-color: #3dc7c9;
   border: none;
   border-radius: 20px;
   color: white;
@@ -1305,7 +1307,7 @@
 
 .collab-sign-btn:hover {
   transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 4px 15px rgba(140, 239, 247, 0.4);
 }
 
 .collab-signature-done {
@@ -1357,7 +1359,7 @@
 }
 
 .collab-radio-card input:checked + .collab-radio-content {
-  border-color: #667eea;
+  border-color: #3dc7c9;
   background: #667eea05;
 }
 
@@ -1376,17 +1378,17 @@
 }
 
 .collab-radio-card input:checked + .collab-radio-content .collab-radio-icon {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background-color: #3dc7c9;
   color: white;
 }
 
 .collab-radio-icon.recommended::after {
   content: '';
   position: absolute;
-  top: -8px;
-  right: -8px;
-  width: 20px;
-  height: 20px;
+  top: -2px;
+  right: -2px;
+  width: 12px;
+  height: 12px;
   background: #28a745;
   border-radius: 50%;
   border: 2px solid white;
@@ -1449,7 +1451,7 @@
 }
 
 .collab-etape-num {
-  background: #667eea;
+  background: #6852a3;
   color: white;
   width: 30px;
   height: 30px;
@@ -1628,7 +1630,7 @@
 }
 
 .collab-timeline-item.livree .collab-timeline-marker {
-  background: #17a2b8;
+  background: #3dc7c9;
   color: white;
 }
 
@@ -1782,7 +1784,7 @@
 
 .collab-cloture-item svg {
   font-size: 28px;
-  color: #667eea;
+  color: #6852a3;
   min-width: 28px;
 }
 
@@ -1845,8 +1847,8 @@
 
 .collab-rating-section textarea:focus {
   outline: none;
-  border-color: #667eea;
-  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  border-color: #3dc7c9;
+  box-shadow: 0 0 0 3px rgba(102, 234, 234, 0.1);
 }
 
 .collab-recommande {
@@ -1883,8 +1885,8 @@
 }
 
 .collab-recommande-btn:hover {
-  border-color: #667eea;
-  color: #667eea;
+  border-color: #3dc7c9;
+  color: #3dc7c9;
   transform: translateY(-2px);
 }
 
@@ -1952,8 +1954,8 @@
 }
 
 .collab-badge-icon.blue {
-  background: linear-gradient(135deg, #667eea, #764ba2);
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  background-color: #6852a3;
+  box-shadow: 0 4px 15px rgba(148, 102, 234, 0.3);
 }
 
 .collab-badge-icon.green {
@@ -1997,14 +1999,14 @@
 }
 
 .collab-btn-primary {
-  background: linear-gradient(135deg, #667eea, #764ba2);
+  background-color: #3dc7c9;
   color: white;
-  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+  box-shadow: 0 4px 15px rgba(102, 234, 234, 0.3);
 }
 
 .collab-btn-primary:hover:not(.disabled) {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+  box-shadow: 0 6px 20px rgba(102, 234, 227, 0.4);
 }
 
 .collab-btn-primary.disabled {
@@ -2025,12 +2027,12 @@
 
 .collab-btn-secondary {
   background: white;
-  color: #667eea;
-  border: 2px solid #667eea;
+  color: #3dc7c9;
+  border: 2px solid #3dc7c9;
 }
 
 .collab-btn-secondary:hover {
-  background: #667eea;
+  background: #3dc7c9;
   color: white;
   transform: translateY(-2px);
 }
@@ -2048,12 +2050,12 @@
 
 .collab-btn-outline {
   background: transparent;
-  color: #667eea;
-  border: 2px solid #667eea;
+  color: #3dc7c9;
+  border: 2px solid #3dc7c9;
 }
 
 .collab-btn-outline:hover {
-  background: #667eea15;
+  background: #66e6ea15;
 }
 
 .collab-btn-sm {
