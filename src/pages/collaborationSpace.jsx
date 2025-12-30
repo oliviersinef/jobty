@@ -13,7 +13,7 @@ import {
 import { FaFacebookF, FaInstagram, FaWhatsapp, FaHandshake, FaRocket } from 'react-icons/fa';
 import { COLORS } from '../styles/colors';
 import logo from '../assets/logo.png';
-import './collaborationspace.css';
+import './collaborationSpace.css';
 
 function CollaborationSpace() {
   const navigate = useNavigate();
