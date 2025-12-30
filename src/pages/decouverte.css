@@ -2,11 +2,8 @@
 /*                          CONTAINER PRINCIPAL                               */
 /* ========================================================================== */
 .decouverte-container {
-  min-height: 100vh;
+   min-height: 100vh;
   background-color: #FFFFFF;
-  display: flex;
-  flex-direction: column;
-  position: relative;
 }
 
 /* ========================================================================== */
@@ -45,7 +42,7 @@
 /* --- Menu de navigation --- */
 .header-nav {
   display: flex;
-  gap: 30px;
+  gap: 35px;
 }
 
 .header-nav .nav-item {

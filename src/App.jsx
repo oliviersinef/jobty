@@ -8,6 +8,7 @@ import Portfolio from './pages/portfolio.jsx';
 import Localisation from './pages/localisation.jsx';
 import JobAlerte from './pages/jobAlerte.jsx';
 import JobExperience from './pages/jobExperience.jsx';
+import CollaborationSpace from './pages/collaborationSpace.jsx';
 import './App.css';
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
         <Route path="/localisation" element={<Localisation />} />
         <Route path="/job-alerte" element={<JobAlerte />} />
         <Route path="/job-experience" element={<JobExperience />} />
+        <Route path="/collaboration/:freelanceId" element={<CollaborationSpace />} />
       </Routes>
     </Router>
   );
