@@ -27,7 +27,7 @@ function App() {
         <Route path="/job-experience" element={<JobExperience />} />
         <Route path="/collaboration/:freelanceId" element={<CollaborationSpace />} />
         <Route path="/dashboard-freelance" element={<DashboardFreelance />} />
-        <Route path="/profil-freelance/" element={<ProfilFreelance />} />
+           <Route path="/profil-freelance/:freelanceId" element={<ProfilPublicFreelance />} />
       </Routes>
     </Router>
   );
