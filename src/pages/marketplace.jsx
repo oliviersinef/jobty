@@ -644,7 +644,8 @@ function Marketplace() {
       </section>
 
       {/* SECTION JOB EXPERIENCE */}
-      <section className="job-experience-section" style={{ backgroundColor: COLORS.secondary }}>
+
+      <section className="job-experience-section">
         <div className="section-header light">
           <h2 className="section-title">
             <FiAward className="section-icon" />
@@ -715,7 +716,9 @@ function Marketplace() {
 
       {/* FOOTER */}
 <footer className="marketplace-footer">
+  
   <div className="footer-content">
+    
     {/* Colonne 1 - Navigation */}
     <div className="footer-column">
       <h4 className="footer-column-title">Navigation</h4>

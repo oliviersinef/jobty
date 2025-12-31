@@ -660,20 +660,23 @@
 }
 
 /* ========== SECTION JOB EXPERIENCE ========== */
-.marketplace-container .job-experience-section {
+
+.job-experience-section {
   padding: 60px 20px;
+  background-color: #6852A3;
+
 }
 
-.marketplace-container .section-header.light .section-title,
-.marketplace-container .section-header.light .section-count {
+.section-header.light .section-title,
+.section-header.light .section-count {
   color: white;
 }
 
-.marketplace-container .section-header.light .section-icon {
+.section-header.light .section-icon {
   color: white;
 }
 
-.marketplace-container .job-experience-grid {
+.job-experience-grid {
   max-width: 1400px;
   margin: 0 auto;
   display: grid;
@@ -681,7 +684,7 @@
   gap: 25px;
 }
 
-.marketplace-container .job-card {
+.job-card {
   display: flex;
   border-radius: 16px;
   overflow: hidden;
@@ -689,12 +692,12 @@
   transition: all 0.3s ease;
 }
 
-.marketplace-container .job-card:hover {
+.job-card:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
 }
 
-.marketplace-container .job-card-left {
+.job-card-left {
   flex: 1;
   background-color: #444;
   padding: 25px 20px;
@@ -704,7 +707,7 @@
   text-align: center;
 }
 
-.marketplace-container .job-photo {
+.job-photo {
   width: 70px;
   height: 70px;
   border-radius: 50%;
@@ -713,36 +716,36 @@
   margin-bottom: 15px;
 }
 
-.marketplace-container .job-name {
+.job-name {
   color: white;
   font-size: 16px;
   font-weight: 700;
   margin-bottom: 5px;
 }
 
-.marketplace-container .job-poste {
+.job-poste {
   font-size: 13px;
   font-weight: 600;
   margin-bottom: 10px;
 }
 
-.marketplace-container .job-stars {
+.job-stars {
   display: flex;
   gap: 3px;
 }
 
-.marketplace-container .job-stars .star {
+.job-stars .star {
   font-size: 14px;
 }
 
-.marketplace-container .job-card-right {
+.job-card-right {
   flex: 1.3;
   background-color: white;
   padding: 20px;
   position: relative;
 }
 
-.marketplace-container .experience-badge {
+.experience-badge {
   position: absolute;
   top: 15px;
   right: 15px;
@@ -753,14 +756,14 @@
   font-weight: 600;
 }
 
-.marketplace-container .job-details {
+.job-details {
   display: flex;
   flex-direction: column;
   gap: 12px;
   margin-top: 35px;
 }
 
-.marketplace-container .job-detail-item {
+.job-detail-item {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -768,12 +771,12 @@
   color: #666;
 }
 
-.marketplace-container .job-detail-item svg {
+.job-detail-item svg {
   font-size: 14px;
   flex-shrink: 0;
 }
 
-.marketplace-container .voir-plus-job-btn {
+.voir-plus-job-btn {
   margin-top: 20px;
   padding: 8px 20px;
   background: transparent;
@@ -786,9 +789,39 @@
   transition: all 0.3s ease;
 }
 
-.marketplace-container .voir-plus-job-btn:hover {
+.voir-plus-job-btn:hover {
   background-color: #3DC7C9;
   color: white;
+}
+
+/* Responsive - Tablettes */
+@media (max-width: 1024px) {
+  .job-experience-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Responsive - Mobile */
+@media (max-width: 768px) {
+  .job-experience-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .job-card {
+    flex-direction: column;
+  }
+  
+  .job-card-left {
+    padding: 20px;
+  }
+  
+  .experience-badge {
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-bottom: 10px;
+    display: inline-block;
+  }
 }
 
 /* ========================================================================== */
@@ -799,6 +832,8 @@
   background-color: #2a2a2a;
   color: #b0b0b0;
   padding: 60px 20px 20px;
+  margin-top: 0 !important;
+ 
 }
 
 .marketplace-footer .footer-content {
