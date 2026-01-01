@@ -25,7 +25,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 5px;
 }
 
 /* ========================================
@@ -34,7 +34,7 @@
 
 .hero-image-container {
   width: 100%;
-  max-width: 500px;
+  max-width: 600px;
   margin-bottom: 10px;
   animation: fadeInUp 0.4s ease-out;
 }
@@ -52,7 +52,7 @@
 
 .logo-container {
   text-align: center;
-  margin-bottom: 25px;
+  margin-bottom: 20px;
   animation: fadeInUp 0.6s ease-out;
 }
 
@@ -151,7 +151,7 @@
 .action-buttons {
   display: flex;
   gap: 30px;
-  margin-top: 12px;
+  margin-top: 20px;
   animation: fadeInUp 1s ease-out;
 }
 
