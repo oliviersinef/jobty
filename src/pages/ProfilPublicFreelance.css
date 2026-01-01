@@ -1435,10 +1435,7 @@ html {
     padding: 14px 12px;
   }
   
-  .profil-nav-icon {
-    font-size: 20px;
-  }
-  
+ 
   .profil-public-footer-content {
     grid-template-columns: 1fr;
     text-align: center;

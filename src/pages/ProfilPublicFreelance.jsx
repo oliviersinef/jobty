@@ -420,7 +420,7 @@ function ProfilPublicFreelance() {
                     className={`profil-nav-tab ${activeSection === item.id ? 'active' : ''}`}
                     onClick={() => scrollToSection(item.id)}
                   >
-                    <span className="profil-nav-icon">{item.icon}</span>
+                    
                     <span className="profil-nav-label">{item.label}</span>
                   </button>
                 ))}
