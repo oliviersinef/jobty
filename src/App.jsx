@@ -10,7 +10,7 @@ import JobAlerte from './pages/jobAlerte.jsx';
 import JobExperience from './pages/jobExperience.jsx';
 import CollaborationSpace from './pages/collaborationSpace.jsx';
 import DashboardFreelance from './pages/dashboardFreelance.jsx';
-import ProfilPublicFreelance from './pages/profilPublicFreelance.jsx'; // ✅ Corrigé ici
+import ProfilPublicFreelance from './pages/ProfilPublicFreelance.jsx'; // ✅ Corrigé ici
 import './App.css';
 
 function App() {
