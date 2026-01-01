@@ -1,7 +1,11 @@
+/* ========================================
+   HOME PAGE - CSS COMPLET
+   ======================================== */
+
 /* Container principal */
 .home-container {
   min-height: 100vh;
-  background: linear-gradient(180deg, #c5ebeb 0%, #FFFFFF 60%);
+  background: linear-gradient(180deg, #cce7e7 0%, #FFFFFF 60%);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -24,7 +28,28 @@
   gap: 20px;
 }
 
-/* Logo Jobty */
+/* ========================================
+   IMAGE HERO AU-DESSUS DU LOGO
+   ======================================== */
+
+.hero-image-container {
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 10px;
+  animation: fadeInUp 0.4s ease-out;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: contain;
+}
+
+/* ========================================
+   LOGO JOBTY
+   ======================================== */
+
 .logo-container {
   text-align: center;
   margin-bottom: 25px;
@@ -32,21 +57,24 @@
 }
 
 .logo-image {
-  max-width: 250px;
+  max-width: 230px;
   height: auto;
   display: block;
   margin: 0 auto;
 }
 
-/* Barre de recherche */
+/* ========================================
+   BARRE DE RECHERCHE
+   ======================================== */
+
 .search-form {
-  width: 100%;
+  width: 85%;
   animation: fadeInUp 0.8s ease-out;
 }
 
 .search-bar {
-  background: transparent;
-  border: 1px solid #999;
+  background-color: #e5f0f083;
+  border: 1px solid #9999993d;
   border-radius: 50px;
   display: flex;
   align-items: center;
@@ -57,7 +85,7 @@
 }
 
 .search-bar:hover {
-  border-color: #666;
+  border-color: #2cc1c375;
 }
 
 .search-bar:focus-within {
@@ -116,16 +144,19 @@
   font-size: 20px;
 }
 
-/* Boutons d'action */
+/* ========================================
+   BOUTONS D'ACTION
+   ======================================== */
+
 .action-buttons {
   display: flex;
-  gap: 16px;
+  gap: 30px;
   margin-top: 12px;
   animation: fadeInUp 1s ease-out;
 }
 
 .action-btn {
-  padding: 12px 24px;
+  padding: 12px 45px;
   border-radius: 25px;
   border: 2px solid #2cc0c3;
   background: transparent;
@@ -148,7 +179,10 @@
   transform: translateY(0);
 }
 
-/* Animation de chargement */
+/* ========================================
+   ANIMATION
+   ======================================== */
+
 @keyframes fadeInUp {
   from {
     opacity: 0;
@@ -160,8 +194,16 @@
   }
 }
 
-/* Responsive */
+/* ========================================
+   RESPONSIVE
+   ======================================== */
+
 @media (max-width: 768px) {
+  .hero-image-container {
+    max-width: 260px;
+    margin-bottom: 8px;
+  }
+
   .logo-image {
     max-width: 200px;
   }
@@ -197,6 +239,11 @@
     padding: 15px;
   }
 
+  .hero-image-container {
+    max-width: 200px;
+    margin-bottom: 6px;
+  }
+
   .logo-image {
     max-width: 160px;
   }
@@ -211,7 +258,7 @@
   }
 
   .search-button {
-    width: 40px; /* Touch target minimum */
+    width: 40px;
     height: 40px;
   }
 
@@ -232,6 +279,10 @@
 
 /* Très petits écrans */
 @media (max-width: 360px) {
+  .hero-image-container {
+    max-width: 160px;
+  }
+
   .action-buttons {
     flex-direction: column;
     width: 100%;
