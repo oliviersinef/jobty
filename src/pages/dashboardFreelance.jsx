@@ -226,7 +226,9 @@ function DashboardFreelance() {
       {/* SIDEBAR */}
       <aside className={`dash-sidebar ${menuOpen ? 'open' : ''}`}>
         <div className="dash-sidebar-header">
-          <img src={logo} alt="Jobty" className="dash-sidebar-logo" />
+          <img 
+          src={logo} alt="Jobty" className="dash-sidebar-logo" 
+          onClick={() => navigate('/')} style={{ cursor: 'pointer' }}/>
           <button className="dash-close-btn" onClick={closeMenu}>
             <FiX />
           </button>
