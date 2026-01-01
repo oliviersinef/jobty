@@ -563,7 +563,7 @@ function Marketplace() {
 
                 <button 
                   className="contact-btn"
-                   onClick={() => navigate(`/collaboration/${freelance.id}`)}
+                   onClick={() => navigate(`/profil-freelance/${freelance.id}`)}
                 >
                   Contacter
                 </button>

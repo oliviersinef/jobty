@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/home.jsx';              // ✅ h minuscule
+import Home from './pages/home.jsx';
 import Decouverte from './pages/decouverte.jsx';
 import Connexion from './pages/connexion.jsx';
 import Marketplace from './pages/marketplace.jsx';
@@ -10,7 +10,7 @@ import JobAlerte from './pages/jobAlerte.jsx';
 import JobExperience from './pages/jobExperience.jsx';
 import CollaborationSpace from './pages/collaborationSpace.jsx';
 import DashboardFreelance from './pages/dashboardFreelance.jsx';
-import ProfilFreelance from "./pages/ProfilFreelance.jsx";
+import ProfilPublicFreelance from './pages/profilPublicFreelance.jsx'; // ✅ Corrigé ici
 import './App.css';
 
 function App() {
@@ -27,7 +27,8 @@ function App() {
         <Route path="/job-experience" element={<JobExperience />} />
         <Route path="/collaboration/:freelanceId" element={<CollaborationSpace />} />
         <Route path="/dashboard-freelance" element={<DashboardFreelance />} />
-        <Route path="/profil-freelance/" element={<ProfilFreelance />} />
+        <Route path="/profil-freelance/:freelanceId" element={<ProfilPublicFreelance />} />
+        <Route path="/profil-freelance" element={<ProfilPublicFreelance />} />
       </Routes>
     </Router>
   );

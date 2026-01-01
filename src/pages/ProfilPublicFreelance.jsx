@@ -9,7 +9,7 @@ import {
 } from 'react-icons/fi';
 import { FaHandshake, FaFacebookF, FaTwitter, FaLinkedinIn, FaWhatsapp } from 'react-icons/fa';
 import logo from '../assets/logo.png';
-import './profilFreelance.css';
+import './ProfilPublicFreelance.css';
 
 function ProfilPublicFreelance() {
   const navigate = useNavigate();
