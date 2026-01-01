@@ -29,8 +29,11 @@ function App() {
         <Route path="/collaboration/:freelanceId" element={<CollaborationSpace />} />
         <Route path="/dashboard-freelance" element={<DashboardFreelance />} />
         <Route path="/profil-freelance/:freelanceId" element={<ProfilPublicFreelance />} />
+        <Route path="/profil-freelance/:resultId" element={<ProfilPublicFreelance />} />
         <Route path="/profil-freelance" element={<ProfilPublicFreelance />} />
+        <Route path="/profil/:id" element={<ProfilPublicFreelance />} />
         <Route path="/search" element={<SearchResults />} /> {/* ← Route ajoutée */}
+        
       </Routes>
     </Router>
   );
