@@ -353,7 +353,7 @@ function SearchResults() {
                 {/* Bouton */}
                 <button 
                   className="search-card-btn"
-                  onClick={() => navigate(`/profil/${result.id}`)}
+                  onClick={() => navigate(`/profil-freelance/${result.id}`)}
                 >
                   Visiter profil
                 </button>
