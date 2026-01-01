@@ -60,7 +60,7 @@ html {
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 80px;
   background: var(--white);
   border-bottom: 1px solid var(--gray-200);
   z-index: 1000;
@@ -68,29 +68,25 @@ html {
 }
 
 .profil-public-header-content {
-  max-width: 1200px;
+  max-width: 1400px;
   margin: 0 auto;
   height: 100%;
   padding: 0 24px;
   display: flex;
-  align-items: center;
+  align-items: center;  /* ← Ceci centre verticalement */
   justify-content: space-between;
 }
 
 .profil-public-logo {
   cursor: pointer;
+  display: flex;  /* ← Ajoutez ceci */
+  align-items: center;  /* ← Ajoutez ceci */
 }
 
 .profil-public-logo img {
-  height: 32px;
+  height: 45px;
+  display: block;  /* ← Ajoutez ceci pour éviter l'espace sous l'image */
 }
-
-.profil-public-header-actions {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
 
 .profil-public-burger-btn {
   width: 40px;
