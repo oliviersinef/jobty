@@ -10,7 +10,8 @@ import JobAlerte from './pages/jobAlerte.jsx';
 import JobExperience from './pages/jobExperience.jsx';
 import CollaborationSpace from './pages/collaborationSpace.jsx';
 import DashboardFreelance from './pages/dashboardFreelance.jsx';
-import ProfilPublicFreelance from './pages/ProfilPublicFreelance.jsx'; // ✅ Corrigé ici
+import ProfilPublicFreelance from './pages/ProfilPublicFreelance.jsx';
+import SearchResults from './pages/searchResults.jsx'; // ← Nouvelle page
 import './App.css';
 
 function App() {
@@ -29,6 +30,7 @@ function App() {
         <Route path="/dashboard-freelance" element={<DashboardFreelance />} />
         <Route path="/profil-freelance/:freelanceId" element={<ProfilPublicFreelance />} />
         <Route path="/profil-freelance" element={<ProfilPublicFreelance />} />
+        <Route path="/search" element={<SearchResults />} /> {/* ← Route ajoutée */}
       </Routes>
     </Router>
   );

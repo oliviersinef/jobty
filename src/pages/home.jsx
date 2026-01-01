@@ -36,7 +36,7 @@ function Home() {
       return;
     }
     
-    navigate(`/marketplace?q=${encodeURIComponent(searchQuery.trim())}`);
+    navigate(`/search?q=${encodeURIComponent(searchQuery.trim())}`);
   };
 
   const handleKeyPress = (e) => {
