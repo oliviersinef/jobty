@@ -200,12 +200,12 @@
 
 @media (max-width: 768px) {
   .hero-image-container {
-    max-width: 260px;
+    max-width: 350px;
     margin-bottom: 8px;
   }
 
   .logo-image {
-    max-width: 200px;
+    max-width: 175px;
   }
 
   .search-bar {
@@ -240,12 +240,12 @@
   }
 
   .hero-image-container {
-    max-width: 200px;
+    max-width: 250px;
     margin-bottom: 6px;
   }
 
   .logo-image {
-    max-width: 160px;
+    max-width: 170px;
   }
 
   .search-bar {
@@ -280,7 +280,7 @@
 /* Très petits écrans */
 @media (max-width: 360px) {
   .hero-image-container {
-    max-width: 160px;
+    max-width: 200px;
   }
 
   .action-buttons {
