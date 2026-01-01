@@ -19,20 +19,7 @@ function ProfilPublicFreelance() {
   const [selectedRealisationIndex, setSelectedRealisationIndex] = useState(null);
   const [isNavSticky, setIsNavSticky] = useState(false);
 
-  // Gestion du scroll pour le menu sticky
-  useEffect(() => {
-    const handleScroll = () => {
-      const profileNav = document.querySelector('.profil-navigation');
-      if (profileNav) {
-        const navTop = profileNav.getBoundingClientRect().top;
-        setIsNavSticky(navTop <= 60);
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
+  
   // Données du freelance
   const freelance = {
     id: 1,
@@ -411,24 +398,23 @@ function ProfilPublicFreelance() {
           </div>
 
           {/* MENU DE NAVIGATION DU PROFIL */}
-          <div className={`profil-navigation ${isNavSticky ? 'sticky' : ''}`}>
-            <div className="profil-navigation-inner">
-              <nav className="profil-nav-tabs">
-                {navItems.map(item => (
-                  <button
-                    key={item.id}
-                    className={`profil-nav-tab ${activeSection === item.id ? 'active' : ''}`}
-                    onClick={() => scrollToSection(item.id)}
-                  >
-                    
-                    <span className="profil-nav-label">{item.label}</span>
-                  </button>
-                ))}
-              </nav>
-              
-              
-            </div>
-          </div>
+          {/* Retirez la condition isNavSticky */}
+<div className="profil-navigation">
+  <div className="profil-navigation-inner">
+    <nav className="profil-nav-tabs">
+      {navItems.map(item => (
+        <button
+          key={item.id}
+          className={`profil-nav-tab ${activeSection === item.id ? 'active' : ''}`}
+          onClick={() => scrollToSection(item.id)}
+        >
+         
+          <span className="profil-nav-label">{item.label}</span>
+        </button>
+      ))}
+    </nav>
+  </div>
+</div>
         </section>
 
         {/* ==================== CONTENU DU PROFIL ==================== */}
