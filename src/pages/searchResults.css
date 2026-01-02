@@ -340,8 +340,8 @@
   border-radius: 16px;
   padding: 24px;
   display: flex;
-  align-items: center;
-  gap: 24px;
+  flex-direction: column;  /* ← Changé en colonne */
+  gap: 16px;
   transition: all 0.2s;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
   position: relative;
@@ -350,6 +350,13 @@
 .search-result-item:hover {
   box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
   transform: translateY(-2px);
+}
+
+/* Ligne principale : Photo + Infos + Stats + Bouton */
+.search-item-main-row {
+  display: flex;
+  align-items: center;
+  gap: 24px;
 }
 
 /* Badge sur desktop */
@@ -367,12 +374,12 @@
   letter-spacing: 0.3px;
 }
 
-/* Photo sur desktop - CARRÉ avec bords arrondis */
+/* Photo sur desktop */
 .search-result-item .search-card-photo {
   width: 80px;
   height: 80px;
   min-width: 80px;
-  border-radius: 12px; /* Bords arrondis modérés */
+  border-radius: 12px;
   overflow: hidden;
   background: white;
   border: 3px solid white;
@@ -391,7 +398,7 @@
   min-width: 200px;
   display: flex;
   flex-direction: column;
-  gap: 8px;
+  gap: 6px;
 }
 
 .search-result-item .search-card-name {
@@ -422,30 +429,102 @@
   color: #9E9E9E;
 }
 
-/* Tags sur desktop - EN DESSOUS des infos */
-.search-result-item .search-card-tags-container {
-  flex: 2;
+/* Stats sur desktop */
+.search-result-item .search-card-stats {
   display: flex;
-  flex-direction: column;
-  gap: 12px;
+  gap: 24px;
+  align-items: center;
 }
 
-.search-result-item .search-card-tags {
+.search-result-item .search-card-projects,
+.search-result-item .search-card-rating {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  min-width: 80px;
+}
+
+.search-result-item .search-projects-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #B8B9FF;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.search-result-item .search-projects-label {
+  font-size: 10px;
+  color: #9E9E9E;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+.search-result-item .search-stars {
+  display: flex;
+  gap: 2px;
+  margin-bottom: 4px;
+}
+
+.search-result-item .search-rating-number {
+  font-size: 20px;
+  font-weight: 700;
+  color: #212121;
+  margin-bottom: 4px;
+  line-height: 1;
+}
+
+.search-result-item .search-rating-label {
+  font-size: 10px;
+  color: #9E9E9E;
+  line-height: 1.4;
+  font-weight: 500;
+}
+
+/* Bouton sur desktop */
+.search-result-item .search-card-btn {
+  padding: 10px 20px;
+  background: transparent;
+  color: #3DC7C9;
+  border: 2px solid #3DC7C9;
+  border-radius: 30px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+  white-space: nowrap;
+}
+
+.search-result-item .search-card-btn:hover {
+  background: #3DC7C9;
+  color: white;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(61, 199, 201, 0.3);
+}
+
+/* ========================================
+   TAGS EN DESSOUS - Nouvelle ligne
+   ======================================== */
+
+.search-item-tags-row {
+  display: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: 10px;
+  padding-left: 104px;  /* Aligné avec les infos (80px photo + 24px gap) */
+  margin-top: -8px;
 }
 
 .search-tag {
-  padding: 7px 14px;
+  padding: 6px 14px;
   background: #cec6e4;
   color: #6852a3;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 500;
-  border: 1px solid #a399c093;
+  border: 1px solid rgba(163, 153, 192, 0.58);
 }
-
 /* Stats sur desktop */
 .search-result-item .search-card-stats {
   display: flex;
@@ -502,17 +581,19 @@
 
 /* Bouton sur desktop */
 .search-result-item .search-card-btn {
-  padding: 12px 24px; 
+  width: 140px;  /* ← Largeur fixe */
+  padding: 10px 0;  /* ← Padding vertical seulement */
   background: transparent;
   color: #3DC7C9;
   border: 2px solid #3DC7C9;
   border-radius: 30px;
-  font-size: 14px;
+  font-size: 13px;
   font-weight: 600;
   cursor: pointer;
   transition: all 0.3s ease;
   text-transform: capitalize;
   white-space: nowrap;
+  text-align: center;
 }
 
 .search-result-item .search-card-btn:hover {

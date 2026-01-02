@@ -227,13 +227,16 @@ function SearchResults() {
     </div>
   );
 
-  // Composant pour un élément de liste (desktop)
-  const ResultListItem = ({ result }) => (
-    <div className="search-result-item">
-      <div className="search-card-badge">
-        {result.type === 'freelance' ? 'Freelance' : 'Entreprise'}
-      </div>
+ // Composant pour un élément de liste (desktop)
+const ResultListItem = ({ result }) => (
+  <div className="search-result-item">
+    {/* Badge */}
+    <div className="search-card-badge">
+      {result.type === 'freelance' ? 'Freelance' : 'Entreprise'}
+    </div>
 
+    {/* Ligne principale : Photo + Infos + Stats + Bouton */}
+    <div className="search-item-main-row">
       <div className="search-card-photo">
         <img src={result.photo} alt={result.nom} />
       </div>
@@ -252,12 +255,6 @@ function SearchResults() {
           <FiMapPin />
           <span>{result.ville}, {result.pays}</span>
         </div>
-      </div>
-
-      <div className="search-card-tags">
-        {result.tags.map((tag, index) => (
-          <span key={index} className="search-tag">{tag}</span>
-        ))}
       </div>
 
       <div className="search-card-stats">
@@ -281,7 +278,15 @@ function SearchResults() {
         Visiter profil
       </button>
     </div>
-  );
+
+    {/* Tags EN DESSOUS - sur une nouvelle ligne */}
+    <div className="search-item-tags-row">
+      {result.tags.map((tag, index) => (
+        <span key={index} className="search-tag">{tag}</span>
+      ))}
+    </div>
+  </div>
+);
 
   return (
     <div className="search-page">
