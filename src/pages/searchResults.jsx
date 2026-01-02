@@ -170,6 +170,119 @@ function SearchResults() {
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
+  // Composant pour une carte (mobile)
+  const ResultCard = ({ result }) => (
+    <div className="search-result-card">
+      <div className="search-card-badge">
+        {result.type === 'freelance' ? 'Freelance' : 'Entreprise'}
+      </div>
+
+      <div className="search-card-header">
+        <div className="search-card-photo">
+          <img src={result.photo} alt={result.nom} />
+        </div>
+        <div className="search-card-info">
+          <h3 className="search-card-name">
+            {result.nom}
+            {result.verified && (
+              <FiCheckCircle className="search-verified-icon" />
+            )}
+          </h3>
+          <p className="search-card-specialite">
+            {result.specialite || result.secteur}
+          </p>
+          <div className="search-card-location">
+            <FiMapPin />
+            <span>{result.ville}, {result.pays}</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="search-card-tags">
+        {result.tags.map((tag, index) => (
+          <span key={index} className="search-tag">{tag}</span>
+        ))}
+      </div>
+
+      <div className="search-card-stats">
+        <div className="search-card-projects">
+          <span className="search-projects-number">{result.projetsCollaboration}</span>
+          <span className="search-projects-label">projets de<br/>collaboration</span>
+        </div>
+        <div className="search-card-rating">
+          <div className="search-stars">
+            {renderStars(result.note)}
+          </div>
+          <span className="search-rating-number">{result.note}</span>
+          <span className="search-rating-label">étoiles<br/>collectées</span>
+        </div>
+      </div>
+
+      <button 
+        className="search-card-btn"
+        onClick={() => navigate(`/profil-freelance/${result.id}`)}
+      >
+        Visiter profil
+      </button>
+    </div>
+  );
+
+  // Composant pour un élément de liste (desktop)
+  const ResultListItem = ({ result }) => (
+    <div className="search-result-item">
+      <div className="search-card-badge">
+        {result.type === 'freelance' ? 'Freelance' : 'Entreprise'}
+      </div>
+
+      <div className="search-card-photo">
+        <img src={result.photo} alt={result.nom} />
+      </div>
+
+      <div className="search-card-info">
+        <h3 className="search-card-name">
+          {result.nom}
+          {result.verified && (
+            <FiCheckCircle className="search-verified-icon" />
+          )}
+        </h3>
+        <p className="search-card-specialite">
+          {result.specialite || result.secteur}
+        </p>
+        <div className="search-card-location">
+          <FiMapPin />
+          <span>{result.ville}, {result.pays}</span>
+        </div>
+      </div>
+
+      <div className="search-card-tags">
+        {result.tags.map((tag, index) => (
+          <span key={index} className="search-tag">{tag}</span>
+        ))}
+      </div>
+
+      <div className="search-card-stats">
+        <div className="search-card-projects">
+          <span className="search-projects-number">{result.projetsCollaboration}</span>
+          <span className="search-projects-label">projets de<br/>collaboration</span>
+        </div>
+        <div className="search-card-rating">
+          <div className="search-stars">
+            {renderStars(result.note)}
+          </div>
+          <span className="search-rating-number">{result.note}</span>
+          <span className="search-rating-label">étoiles<br/>collectées</span>
+        </div>
+      </div>
+
+      <button 
+        className="search-card-btn"
+        onClick={() => navigate(`/profil-freelance/${result.id}`)}
+      >
+        Visiter profil
+      </button>
+    </div>
+  );
+
   return (
     <div className="search-page">
       {/* HEADER */}
@@ -298,66 +411,17 @@ function SearchResults() {
             {filteredResults.length} résultat{filteredResults.length > 1 ? 's' : ''} trouvé{filteredResults.length > 1 ? 's' : ''}
           </h2>
 
+          {/* Version DESKTOP (liste) */}
+          <div className="search-results-list">
+            {filteredResults.map((result) => (
+              <ResultListItem key={result.id} result={result} />
+            ))}
+          </div>
+
+          {/* Version MOBILE (cartes) */}
           <div className="search-results-grid">
             {filteredResults.map((result) => (
-              <div key={result.id} className="search-result-card">
-                {/* Badge type */}
-                <div className="search-card-badge">
-                  {result.type === 'freelance' ? 'Freelance' : 'Entreprise'}
-                </div>
-
-                {/* Photo et infos principales */}
-                <div className="search-card-header">
-                  <div className="search-card-photo">
-                    <img src={result.photo} alt={result.nom} />
-                  </div>
-                  <div className="search-card-info">
-                    <h3 className="search-card-name">
-                      {result.nom}
-                      {result.verified && (
-                        <FiCheckCircle className="search-verified-icon" />
-                      )}
-                    </h3>
-                    <p className="search-card-specialite">
-                      {result.specialite || result.secteur}
-                    </p>
-                    <div className="search-card-location">
-                      <FiMapPin />
-                      <span>{result.ville}, {result.pays}</span>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Tags/Compétences */}
-                <div className="search-card-tags">
-                  {result.tags.map((tag, index) => (
-                    <span key={index} className="search-tag">{tag}</span>
-                  ))}
-                </div>
-
-                {/* Stats et note */}
-                <div className="search-card-stats">
-                  <div className="search-card-projects">
-                    <span className="search-projects-number">{result.projetsCollaboration}</span>
-                    <span className="search-projects-label">projets de<br/>collaboration</span>
-                  </div>
-                  <div className="search-card-rating">
-                    <div className="search-stars">
-                      {renderStars(result.note)}
-                    </div>
-                    <span className="search-rating-number">{result.note}</span>
-                    <span className="search-rating-label">étoiles<br/>collectées</span>
-                  </div>
-                </div>
-
-                {/* Bouton */}
-                <button 
-                  className="search-card-btn"
-                  onClick={() => navigate(`/profil-freelance/${result.id}`)}
-                >
-                  Visiter profil
-                </button>
-              </div>
+              <ResultCard key={result.id} result={result} />
             ))}
           </div>
 
