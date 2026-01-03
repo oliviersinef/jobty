@@ -27,8 +27,12 @@ import {
   FiStar,
   FiUser,
   FiFacebook,
-  FiInstagram
+  FiInstagram,
+  FiActivity,
+  FiFeather,
+  FiDroplet,
 } from 'react-icons/fi';
+import { HiOutlineSparkles } from 'react-icons/hi';
 import { FaWhatsapp } from 'react-icons/fa';
 import { COLORS } from '../styles/colors';
 import logo from '../assets/logo.png';
@@ -47,10 +51,10 @@ function Decouverte() {
       description: 'Maçons, menuisiers, peintres...'
     },
     {
-      id: 'electricite-plomberie',
-      nom: 'Électricité & Plomberie',
+      id: 'electricite',
+      nom: 'Électricité',
       icon: FiZap,
-      description: 'Électriciens, plombiers, climatisation...'
+      description: 'Électriciens, domotique, réseaux électriques...'
     },
     {
       id: 'informatique',
@@ -66,7 +70,7 @@ function Decouverte() {
     },
     {
       id: 'sante',
-      nom: 'Santé & Bien-être',
+      nom: 'Santé ',
       icon: FiHeart,
       description: 'Infirmiers, kinés, esthétique...'
     },
@@ -91,7 +95,7 @@ function Decouverte() {
     {
       id: 'agriculture',
       nom: 'Agriculture',
-      icon: FiTrendingUp,
+      icon: FiFeather,
       description: 'Agronomes, éleveurs, pêcheurs...'
     },
     {
@@ -135,7 +139,29 @@ function Decouverte() {
       nom: 'Mécanique & Automobile',
       icon: FiTool,
       description: 'Mécaniciens, garagistes, carrossiers...'
-    }
+    },
+
+    {
+  id: 'beaute',
+  nom: 'Beauté & Bien-être',
+  icon: HiOutlineSparkles,
+  description: 'Coiffeurs, esthéticiennes, masseurs...'
+},
+
+{
+  id: 'sport',
+  nom: 'Sport & Fitness',
+  icon: FiActivity,
+  description: 'Coachs sportifs, préparateurs physiques...'
+},
+
+{
+  id: 'plomberie',
+  nom: 'Plomberie & Chauffage',
+  icon: FiDroplet,
+  description: 'Plombiers, chauffagistes, climatisation...'
+}
+    
   ];
 
   // Liste des services
