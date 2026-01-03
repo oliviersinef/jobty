@@ -41,7 +41,8 @@
 }
 
 .search-logo img {
-  height: 36px;
+   max-width: 120px;
+  height: auto;
 }
 
 .search-nav {
@@ -52,7 +53,7 @@
 .search-nav a {
   text-decoration: none;
   color: #616161;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 500;
   transition: color 0.2s;
 }
