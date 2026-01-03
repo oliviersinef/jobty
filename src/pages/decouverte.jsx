@@ -31,6 +31,7 @@ import {
   FiActivity,
   FiFeather,
   FiDroplet,
+  FiCpu,
 } from 'react-icons/fi';
 import { HiOutlineSparkles } from 'react-icons/hi';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -160,6 +161,13 @@ function Decouverte() {
   nom: 'Plomberie & Chauffage',
   icon: FiDroplet,
   description: 'Plombiers, chauffagistes, climatisation...'
+},
+
+{
+  id: 'intelligence-artificielle',
+  nom: 'Intelligence Artificielle',
+  icon: FiCpu,
+  description: 'IA, Machine Learning, Data Science...'
 }
     
   ];
