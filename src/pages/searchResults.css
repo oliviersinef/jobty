@@ -382,8 +382,8 @@
   border-radius: 12px;
   overflow: hidden;
   background: white;
-  border: 3px solid white;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(219, 219, 235, 0.692);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.08);
 }
 
 .search-result-item .search-card-photo img {
