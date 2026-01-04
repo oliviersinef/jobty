@@ -12,6 +12,8 @@ import CollaborationSpace from './pages/collaborationSpace.jsx';
 import DashboardFreelance from './pages/dashboardFreelance.jsx';
 import ProfilPublicFreelance from './pages/ProfilPublicFreelance.jsx';
 import SearchResults from './pages/searchResults.jsx'; // ← Nouvelle page
+import DashboardAdmin from './pages/DashboardAdmin';
+
 import './App.css';
 
 function App() {
@@ -33,6 +35,7 @@ function App() {
         <Route path="/profil-freelance" element={<ProfilPublicFreelance />} />
         <Route path="/profil/:id" element={<ProfilPublicFreelance />} />
         <Route path="/search" element={<SearchResults />} /> {/* ← Route ajoutée */}
+        <Route path="/dashboard-admin" element={<DashboardAdmin />} />
         
       </Routes>
     </Router>
