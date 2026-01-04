@@ -32,6 +32,8 @@ import {
   FiFeather,
   FiDroplet,
   FiCpu,
+  FiMusic,
+  FiVideo,
 } from 'react-icons/fi';
 import { HiOutlineSparkles } from 'react-icons/hi';
 import { FaWhatsapp } from 'react-icons/fa';
@@ -168,6 +170,20 @@ function Decouverte() {
   nom: 'Intelligence Artificielle',
   icon: FiCpu,
   description: 'IA, Machine Learning, Data Science...'
+},
+
+{
+  id: 'sons-musique',
+  nom: 'Sons & Musique',
+  icon: FiMusic,
+  description: 'Musiciens, beatmakers, ingénieurs son...'
+},
+
+{
+  id: 'video',
+  nom: 'Vidéo & Audiovisuel',
+  icon: FiVideo,
+  description: 'Vidéastes, monteurs, réalisateurs...'
 }
     
   ];
