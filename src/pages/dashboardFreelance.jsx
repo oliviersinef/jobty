@@ -11,7 +11,15 @@ import {
   FiSave, FiLock, FiGlobe, FiDownload, FiUpload, 
   FiCreditCard, FiFileText, FiAlertCircle
 } from 'react-icons/fi';
+
+import { 
+  // ... vos imports existants ...
+  FiBarChart2, FiPieChart, FiActivity, FiTrendingDown,
+  FiMap, FiMousePointer, FiPercent, FiUsers as FiUsersIcon
+} from 'react-icons/fi';
+import { FaBullhorn } from 'react-icons/fa';
 import { FaHandshake, FaRocket } from 'react-icons/fa';
+
 import logo from '../assets/logo.png';
 import './dashboardFreelance.css';
 
@@ -22,6 +30,8 @@ function DashboardFreelance() {
   const [viewMode, setViewMode] = useState('grid');
   const [paiementSubTab, setPaiementSubTab] = useState('recus');
   const [parametresSubTab, setParametresSubTab] = useState('notifications');
+  const [pubSubTab, setPubSubTab] = useState('actives');
+  const [analyticsSubTab, setAnalyticsSubTab] = useState('apercu');
   
   // Formulaire Carte Pro
   const [carteForm, setCarteForm] = useState({
@@ -168,6 +178,108 @@ function DashboardFreelance() {
     }
   ];
 
+
+  // Données Publicité
+const publiciteStats = {
+  budgetMois: 45000,
+  budgetTotal: 100000,
+  impressions: 12450,
+  vuesProfil: 234,
+  messagesRecus: 18,
+  tauxConversion: 7.6
+};
+
+const campagnes = [
+  {
+    id: 1,
+    nom: 'Bâtiment & Travaux',
+    type: 'Secteur d\'activité',
+    statut: 'active',
+    impressions: 4230,
+    clics: 89,
+    ctr: 2.1,
+    budgetDepense: 15000,
+    budgetTotal: 30000,
+    joursRestants: 15
+  },
+  {
+    id: 2,
+    nom: 'Visibilité Carte Dakar',
+    type: 'Localisation',
+    statut: 'active',
+    impressions: 2850,
+    clics: 124,
+    ctr: 4.4,
+    budgetDepense: 12000,
+    budgetTotal: 25000,
+    zone: 'Dakar (10km)'
+  },
+  {
+    id: 3,
+    nom: 'Mots-clés Premium',
+    type: 'Priorité recherche',
+    statut: 'active',
+    impressions: 1560,
+    clics: 67,
+    ctr: 4.3,
+    budgetDepense: 18000,
+    budgetTotal: 45000,
+    motsCles: ['développeur web', 'site e-commerce']
+  },
+  {
+    id: 4,
+    nom: 'Campagne été 2024',
+    type: 'Secteur d\'activité',
+    statut: 'pause',
+    impressions: 890,
+    clics: 23,
+    ctr: 2.6,
+    budgetDepense: 8000,
+    budgetTotal: 20000
+  }
+];
+
+// Données Analytics
+const analyticsData = {
+  vuesProfil: 2340,
+  paysActifs: 12,
+  visibilite: 145,
+  projetsRemportes: 23,
+  tauxConversion: 9.8,
+  tempsMoyen: '3min 24s',
+  tauxRebond: 34
+};
+
+const sourcesTrafic = [
+  { source: 'Recherche organique', vues: 1120, pct: 48 },
+  { source: 'Carte interactive', vues: 680, pct: 29 },
+  { source: 'Publicités', vues: 340, pct: 15 },
+  { source: 'Profils similaires', vues: 200, pct: 8 }
+];
+
+const topPays = [
+  { pays: 'Sénégal', flag: '🇸🇳', vues: 890, pct: 38, villes: ['Dakar', 'Thiès', 'Saint-Louis'] },
+  { pays: 'Nigeria', flag: '🇳🇬', vues: 560, pct: 24, villes: ['Lagos', 'Abuja', 'Ibadan'] },
+  { pays: 'Côte d\'Ivoire', flag: '🇨🇮', vues: 420, pct: 18, villes: ['Abidjan', 'Yamoussoukro'] },
+  { pays: 'Ghana', flag: '🇬🇭', vues: 280, pct: 12, villes: ['Accra', 'Kumasi'] },
+  { pays: 'Kenya', flag: '🇰🇪', vues: 190, pct: 8, villes: ['Nairobi', 'Mombasa'] }
+];
+
+const topRealisations = [
+  { id: 1, titre: 'Application e-commerce Senmarket', vues: 890, clics: 280, messages: 12, projets: 3 },
+  { id: 2, titre: 'Site vitrine Agence Immobilière', vues: 670, clics: 190, messages: 8, projets: 2 },
+  { id: 3, titre: 'Logo & Identité Restaurant', vues: 560, clics: 140, messages: 6, projets: 1 },
+  { id: 4, titre: 'Dashboard Analytics SaaS', vues: 450, clics: 120, messages: 5, projets: 0 },
+  { id: 5, titre: 'Application mobile Fitness', vues: 380, clics: 95, messages: 4, projets: 1 }
+];
+
+const performanceServices = [
+  { service: 'Création site web vitrine', prix: 250000, vues: 840, devis: 28, conversion: 3.3 },
+  { service: 'Application mobile', prix: 500000, vues: 670, devis: 18, conversion: 2.7 },
+  { service: 'Site e-commerce complet', prix: 450000, vues: 560, devis: 15, conversion: 2.7 },
+  { service: 'SEO & Référencement', prix: 80000, vues: 450, devis: 12, conversion: 2.7 }
+];
+
   const toggleMenu = () => setMenuOpen(!menuOpen);
   const closeMenu = () => setMenuOpen(false);
 
@@ -293,6 +405,19 @@ function DashboardFreelance() {
           >
             <FiSettings /> Paramètres
           </button>
+
+          <button 
+  className={`dash-nav-item ${activeTab === 'publicite' ? 'active' : ''}`}
+  onClick={() => setActiveTab('publicite')}
+>
+  <FaBullhorn /> Publicité
+</button>
+<button 
+  className={`dash-nav-item ${activeTab === 'analytics' ? 'active' : ''}`}
+  onClick={() => setActiveTab('analytics')}
+>
+  <FiBarChart2 /> Analytics
+</button>
         </nav>
 
         <button className="dash-logout-btn" onClick={() => navigate('/')}>
@@ -317,6 +442,8 @@ function DashboardFreelance() {
             {activeTab === 'paiement' && 'Paiement'}
             {activeTab === 'facturation' && 'Facturation'}
             {activeTab === 'parametres' && 'Paramètres'}
+            {activeTab === 'publicite' && 'Publicité'}
+            {activeTab === 'analytics' && 'Analytics'}
           </h1>
           <div className="dash-header-actions">
             <button className="dash-notif-btn">
@@ -1065,6 +1192,374 @@ function DashboardFreelance() {
             </div>
           )}
 
+       {/* ONGLET PUBLICITÉ */}
+{activeTab === 'publicite' && (
+  <div className="dash-publicite-section">
+    {/* Stats globales */}
+    <div className="dash-section">
+      <h2>Budget & Performance ce mois</h2>
+      <div className="dash-stats-grid">
+        <div className="dash-stat-card primary">
+          <div className="dash-stat-icon">
+            <FiEye />
+          </div>
+          <div className="dash-stat-content">
+            <span className="dash-stat-label">Impressions</span>
+            <span className="dash-stat-value">{publiciteStats.impressions.toLocaleString()}</span>
+          </div>
+        </div>
+        <div className="dash-stat-card secondary">
+          <div className="dash-stat-icon">
+            <FiUser />
+          </div>
+          <div className="dash-stat-content">
+            <span className="dash-stat-label">Vues profil</span>
+            <span className="dash-stat-value">{publiciteStats.vuesProfil}</span>
+          </div>
+        </div>
+        <div className="dash-stat-card accent">
+          <div className="dash-stat-icon">
+            <FiMessageCircle />
+          </div>
+          <div className="dash-stat-content">
+            <span className="dash-stat-label">Messages</span>
+            <span className="dash-stat-value">{publiciteStats.messagesRecus}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {/* Section campagnes */}
+    <div className="dash-section">
+      <div className="dash-section-header">
+        <h2>Mes campagnes</h2>
+        <button className="dash-btn-primary">
+          <FiPlus /> Créer une campagne
+        </button>
+      </div>
+
+      {/* Sous-onglets */}
+      <div className="dash-subtabs">
+        <button
+          className={`dash-subtab ${pubSubTab === 'actives' ? 'active' : ''}`}
+          onClick={() => setPubSubTab('actives')}
+        >
+          Actives ({campagnes.filter(c => c.statut === 'active').length})
+        </button>
+        <button
+          className={`dash-subtab ${pubSubTab === 'pause' ? 'active' : ''}`}
+          onClick={() => setPubSubTab('pause')}
+        >
+          En pause ({campagnes.filter(c => c.statut === 'pause').length})
+        </button>
+      </div>
+
+      {/* Liste des campagnes */}
+      <div className="dash-services-grid">
+        {campagnes
+          .filter(c => pubSubTab === 'actives' ? c.statut === 'active' : c.statut === 'pause')
+          .map(campagne => (
+            <div key={campagne.id} className="dash-service-card">
+              <div className="dash-service-content">
+                <h3>{campagne.nom}</h3>
+                <p>{campagne.type}</p>
+                
+                <div className="dash-service-meta">
+                  <span className="dash-service-prix">{campagne.impressions.toLocaleString()} impressions</span>
+                  <span className="dash-service-delai">
+                    <FiTrendingUp /> {campagne.ctr}% CTR
+                  </span>
+                </div>
+                
+                <div className="dash-service-stats">
+                  <span><FiMousePointer /> {campagne.clics} clics</span>
+                </div>
+
+                <div className="dash-project-progress">
+                  <div className="dash-progress-bar">
+                    <div 
+                      className="dash-progress-fill" 
+                      style={{ width: `${(campagne.budgetDepense / campagne.budgetTotal) * 100}%` }}
+                    ></div>
+                  </div>
+                  <span>{Math.round((campagne.budgetDepense / campagne.budgetTotal) * 100)}%</span>
+                </div>
+                
+                <p className="dash-project-next">
+                  Budget: {campagne.budgetDepense.toLocaleString()} / {campagne.budgetTotal.toLocaleString()} F
+                </p>
+              </div>
+              
+              <div className="dash-service-actions">
+                <button className="dash-icon-btn"><FiBarChart2 /></button>
+                <button className="dash-icon-btn"><FiEdit3 /></button>
+                <button className="dash-icon-btn danger"><FiTrash2 /></button>
+              </div>
+            </div>
+          ))}
+      </div>
+    </div>
+  </div>
+)}
+
+{/* ONGLET ANALYTICS */}
+{activeTab === 'analytics' && (
+  <div className="dash-analytics-section">
+    {/* Période */}
+    <div className="dash-analytics-header">
+      <h2>Vue d'ensemble</h2>
+      <select className="dash-analytics-period">
+        <option>Derniers 30 jours</option>
+        <option>Derniers 7 jours</option>
+        <option>Ce mois</option>
+        <option>Mois dernier</option>
+      </select>
+    </div>
+
+    {/* Métriques clés */}
+    <div className="dash-analytics-metrics">
+      <div className="dash-analytics-metric-card">
+        <div className="dash-analytics-metric-icon primary">
+          <FiEye />
+        </div>
+        <div className="dash-analytics-metric-content">
+          <span className="dash-analytics-metric-value">{analyticsData.vuesProfil.toLocaleString()}</span>
+          <span className="dash-analytics-metric-label">Vues profil</span>
+          <span className="dash-analytics-metric-trend success">
+            <FiTrendingUp /> +23%
+          </span>
+        </div>
+      </div>
+
+      <div className="dash-analytics-metric-card">
+        <div className="dash-analytics-metric-icon secondary">
+          <FiGlobe />
+        </div>
+        <div className="dash-analytics-metric-content">
+          <span className="dash-analytics-metric-value">{analyticsData.paysActifs}</span>
+          <span className="dash-analytics-metric-label">Pays actifs</span>
+          <span className="dash-analytics-metric-trend success">
+            <FiTrendingUp /> +2
+          </span>
+        </div>
+      </div>
+
+      <div className="dash-analytics-metric-card">
+        <div className="dash-analytics-metric-icon accent">
+          <FiTrendingUp />
+        </div>
+        <div className="dash-analytics-metric-content">
+          <span className="dash-analytics-metric-value">+{analyticsData.visibilite}%</span>
+          <span className="dash-analytics-metric-label">Visibilité</span>
+          <span className="dash-analytics-metric-trend success">
+            🚀
+          </span>
+        </div>
+      </div>
+
+      <div className="dash-analytics-metric-card">
+        <div className="dash-analytics-metric-icon warning">
+          <FiBriefcase />
+        </div>
+        <div className="dash-analytics-metric-content">
+          <span className="dash-analytics-metric-value">{analyticsData.projetsRemportes}</span>
+          <span className="dash-analytics-metric-label">Projets</span>
+          <span className="dash-analytics-metric-trend success">
+            <FiTrendingUp /> +3
+          </span>
+        </div>
+      </div>
+
+      <div className="dash-analytics-metric-card">
+        <div className="dash-analytics-metric-icon">
+          <FiPercent />
+        </div>
+        <div className="dash-analytics-metric-content">
+          <span className="dash-analytics-metric-value">{analyticsData.tauxConversion}%</span>
+          <span className="dash-analytics-metric-label">Taux conv.</span>
+          <span className="dash-analytics-metric-trend success">
+            <FiTrendingUp /> +1.2%
+          </span>
+        </div>
+      </div>
+    </div>
+
+    {/* Sous-onglets Analytics */}
+    <div className="dash-param-menu">
+      <button
+        className={`dash-param-menu-item ${analyticsSubTab === 'apercu' ? 'active' : ''}`}
+        onClick={() => setAnalyticsSubTab('apercu')}
+      >
+        <FiGrid /> Aperçu
+      </button>
+      <button
+        className={`dash-param-menu-item ${analyticsSubTab === 'geo' ? 'active' : ''}`}
+        onClick={() => setAnalyticsSubTab('geo')}
+      >
+        <FiGlobe /> Géographie
+      </button>
+      <button
+        className={`dash-param-menu-item ${analyticsSubTab === 'realisations' ? 'active' : ''}`}
+        onClick={() => setAnalyticsSubTab('realisations')}
+      >
+        <FiImage /> Réalisations
+      </button>
+      <button
+        className={`dash-param-menu-item ${analyticsSubTab === 'services' ? 'active' : ''}`}
+        onClick={() => setAnalyticsSubTab('services')}
+      >
+        <FiBriefcase /> Services
+      </button>
+    </div>
+
+    {/* Contenu Aperçu */}
+    {analyticsSubTab === 'apercu' && (
+      <div className="dash-analytics-content">
+        {/* Visibilité profil */}
+        <div className="dash-analytics-card">
+          <h3><FiEye /> Visibilité du profil</h3>
+          <div className="dash-analytics-stats-row">
+            <div className="dash-analytics-stat-item">
+              <span className="dash-analytics-stat-number">{analyticsData.vuesProfil.toLocaleString()}</span>
+              <span className="dash-analytics-stat-text">Vues totales</span>
+            </div>
+            <div className="dash-analytics-stat-item">
+              <span className="dash-analytics-stat-number">{analyticsData.tempsMoyen}</span>
+              <span className="dash-analytics-stat-text">Temps moyen</span>
+            </div>
+            <div className="dash-analytics-stat-item">
+              <span className="dash-analytics-stat-number">{analyticsData.tauxRebond}%</span>
+              <span className="dash-analytics-stat-text">Taux de rebond</span>
+              <span className="dash-analytics-badge success">Excellent</span>
+            </div>
+          </div>
+        </div>
+
+        {/* Sources de trafic */}
+        <div className="dash-analytics-card">
+          <h3><FiPieChart /> Sources de trafic</h3>
+          <div className="dash-analytics-sources">
+            {sourcesTrafic.map((source, index) => (
+              <div key={index} className="dash-analytics-source-item">
+                <div className="dash-analytics-source-info">
+                  <span className="dash-analytics-source-name">{source.source}</span>
+                  <span className="dash-analytics-source-value">{source.vues} vues ({source.pct}%)</span>
+                </div>
+                <div className="dash-analytics-source-bar">
+                  <div 
+                    className="dash-analytics-source-fill" 
+                    style={{ width: `${source.pct}%` }}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* Contenu Géographie */}
+    {analyticsSubTab === 'geo' && (
+      <div className="dash-analytics-content">
+        <div className="dash-analytics-card full">
+          <h3><FiMap /> Répartition géographique</h3>
+          <div className="dash-analytics-map-placeholder">
+            <FiMap />
+            <p>Carte interactive des visiteurs</p>
+          </div>
+          <div className="dash-analytics-countries">
+            {topPays.map((pays, index) => (
+              <div key={index} className="dash-analytics-country-item">
+                <div className="dash-analytics-country-rank">{index + 1}</div>
+                <div className="dash-analytics-country-info">
+                  <span className="dash-analytics-country-flag">{pays.flag}</span>
+                  <div>
+                    <span className="dash-analytics-country-name">{pays.pays}</span>
+                    <span className="dash-analytics-country-cities">{pays.villes.join(', ')}</span>
+                  </div>
+                </div>
+                <div className="dash-analytics-country-stats">
+                  <span className="dash-analytics-country-vues">{pays.vues} vues</span>
+                  <div className="dash-analytics-country-bar">
+                    <div 
+                      className="dash-analytics-country-fill" 
+                      style={{ width: `${pays.pct}%` }}
+                    ></div>
+                  </div>
+                  <span className="dash-analytics-country-pct">{pays.pct}%</span>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* Contenu Réalisations */}
+    {analyticsSubTab === 'realisations' && (
+      <div className="dash-analytics-content">
+        <div className="dash-analytics-card full">
+          <h3><FiImage /> Performance des réalisations</h3>
+          <p className="dash-analytics-subtitle">Top 5 de vos réalisations les plus vues</p>
+          <div className="dash-analytics-realisations">
+            {topRealisations.map((real, index) => (
+              <div key={real.id} className="dash-analytics-realisation-item">
+                <div className="dash-analytics-realisation-rank">#{index + 1}</div>
+                <div className="dash-analytics-realisation-info">
+                  <h4>{real.titre}</h4>
+                  <div className="dash-analytics-realisation-stats">
+                    <span><FiEye /> {real.vues} vues</span>
+                    <span><FiMousePointer /> {real.clics} clics</span>
+                    <span><FiMessageCircle /> {real.messages} messages</span>
+                    <span><FiBriefcase /> {real.projets} projets</span>
+                  </div>
+                </div>
+                <button className="dash-btn-outline dash-btn-sm">Voir détails</button>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* Contenu Services */}
+    {analyticsSubTab === 'services' && (
+      <div className="dash-analytics-content">
+        <div className="dash-analytics-card full">
+          <h3><FiBriefcase /> Performance des services</h3>
+          <div className="dash-analytics-services-table">
+            <div className="dash-analytics-table-header">
+              <span>Service</span>
+              <span>Prix</span>
+              <span>Vues</span>
+              <span>Devis</span>
+              <span>Conv.</span>
+            </div>
+            {performanceServices.map((service, index) => (
+              <div key={index} className="dash-analytics-table-row">
+                <span className="dash-analytics-service-name">{service.service}</span>
+                <span className="dash-analytics-service-prix">{service.prix.toLocaleString()} F</span>
+                <span>{service.vues}</span>
+                <span>{service.devis}</span>
+                <span className="dash-analytics-service-conv">{service.conversion}%</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* Export */}
+    <div className="dash-analytics-export">
+      <button className="dash-btn-secondary">
+        <FiDownload /> Exporter PDF
+      </button>
+      <button className="dash-btn-secondary">
+        <FiFileText /> Exporter CSV
+      </button>
+    </div>
+  </div>
+)}
         </div>
       </main>
     </div>
